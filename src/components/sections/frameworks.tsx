@@ -7,12 +7,12 @@ import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/utils/utils";
 
 export const Frameworks = () => {
-  const [name, setName] = useState("any framework");
+  const [name, setName] = useState("n’importe quel framework");
   return (
     <Container className="lg:flex items-center justify-between max-w-[120rem] mx-auto py-16">
       <div className="mb-4 lg:mb-0 text-center lg:text-left">
         <p className="text-xl md:text-2xl leading-tight text-secondary-text">
-          Use Supabase with
+          Intégrez Strivehawk avec
         </p>
 
         <AnimatePresence mode="wait">

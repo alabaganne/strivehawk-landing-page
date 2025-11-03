@@ -9,19 +9,18 @@ export function Testimonial() {
   return (
     <>
       <Container className="py-16">
-        <Title>Join the community</Title>
+        <Title>Ils nous font confiance</Title>
         <SubTitle>
-          Discover what our community has to say about their Supabase
-          experience.
+          Découvrez les retours de nos clients et partenaires sur leur collaboration avec Strivehawk.
         </SubTitle>
 
         <div className="space-x-2 flex justify-center mt-8">
           <Button className="flex items-center gap-x-2" variant="secondary">
-            Github discussion
+            Avis Google
             <MessageCircle size={16} className="text-secondary-text" />
           </Button>
           <Button className="flex items-center gap-x-2" variant="secondary">
-            Discord
+            Rejoindre la communauté
             <MessageCircle size={16} className="text-secondary-text" />
           </Button>
         </div>

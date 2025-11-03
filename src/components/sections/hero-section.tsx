@@ -15,43 +15,46 @@ export const HeroSection = () => {
             size="cta"
             className="space-x-2 group mb-8"
           >
-            <Highlight>Launch Week 13</Highlight>
+            <Highlight>Strivehawk Afrique</Highlight>
             <p className="pr-3 flex items-center gap-3 text-xs md:text-base">
-              Learn more
+              Lien direct avec Strivehawk US
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 duration-200" />
             </p>
           </Button>
 
           <HeroTitle className="tracking-normal">
-            Build in a weekend <br className="hidden md:block" />
-            <span className="text-brand">Scale to millions</span>
+            La technologie au service de l’humain et de la performance.
           </HeroTitle>
 
           <HerosubTitle className="my-3 lg:mb-0">
-            Supabase is an open source Firebase alternative.
-            <br className="hidden md:block" />
-            Start your project with a Postgres database, Authentication, instant
-            APIs, Edge <br className="hidden md:block" /> Functions, Realtime
-            subscriptions, Storage, and Vector embeddings.
+            Strivehawk accompagne les entreprises d’Afrique de l’Ouest dans leur
+            croissance digitale grâce à des solutions IT, Cloud et de
+            cybersécurité fiables, accessibles et centrées sur l’humain.
           </HerosubTitle>
 
           <div className="flex items-center justify-center space-x-2 mt-5 mb-18">
-            <Button size="medium" className="hidden md:block">
-              Start Your Project
+            <Button size="medium" className="hidden md:block" href="/services">
+              Découvrir nos services
             </Button>
             <Button
               size="medium"
               variant="secondary"
               className="hidden md:block"
+              href="/contact"
             >
-              Request a demo
+              Démarrer votre projet
             </Button>
 
-            <Button size="small" className="md:hidden">
-              Start Your Project
+            <Button size="small" className="md:hidden" href="/services">
+              Découvrir nos services
             </Button>
-            <Button size="small" variant="secondary" className="md:hidden">
-              Request a demo
+            <Button
+              size="small"
+              variant="secondary"
+              className="md:hidden"
+              href="/contact"
+            >
+              Démarrer votre projet
             </Button>
           </div>
 

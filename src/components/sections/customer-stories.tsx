@@ -9,26 +9,27 @@ export const CustomerStories = () => {
       <div className="flex flex-col space-y-8 lg:flex-row lg:items-end w-full lg:justify-between">
         <div className="space-y-5 text-center lg:text-left">
           <p className="text-sm font-medium text-secondary-text uppercase tracking-wider text-center lg:text-left">
-            Customer Stories
+            Témoignages clients
           </p>
 
           <Title className="text-center lg:text-left">
-            Infrastructure{" "}
+            Infrastructure
             <span className="text-secondary-text">
-              to <br /> innovate and scale with ease.
+              {" "}pour innover et se développer sereinement.
             </span>
           </Title>
 
           <SubTitle className="text-center lg:text-left">
-            See how Supabase empowers companies of all sizes to accelerate their
-            growth and <br /> streamline their work.
+            Découvrez comment Strivehawk accompagne les entreprises africaines pour accélérer leur croissance, sécuriser leurs opérations et renforcer leurs équipes.
           </SubTitle>
         </div>
 
         <div className="space-x-3 mt-5 md:mt-0 flex item-center justify-center">
-          <Button size="small">View all stories</Button>
-          <Button size="small" variant="secondary">
-            View Events
+          <Button size="small" href="/services">
+            Voir nos services
+          </Button>
+          <Button size="small" variant="secondary" href="/contact">
+            Parler à un expert
           </Button>
         </div>
       </div>

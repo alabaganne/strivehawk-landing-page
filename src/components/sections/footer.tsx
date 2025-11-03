@@ -9,13 +9,14 @@ import { Youtube } from "../icon/youtube";
 export const Footer = () => {
   return (
     <footer className="border-t border-b border-transparent-border bg-black">
-      <Container className="flex flex-col md:flex-row justify-between py-20">
-        <div>
-          <div>
-            <Logo />
-          </div>
+      <Container className="flex flex-col md:flex-row justify-between py-20 gap-10">
+        <div className="max-w-xs space-y-4">
+          <Logo />
+          <p className="text-sm text-secondary-text">
+            Strivehawk Afrique accompagne les organisations d’Afrique de l’Ouest dans leur transformation digitale avec des solutions fiables et humaines.
+          </p>
 
-          <div className="[&_svg]:h-[2.2rem] [&_svg]:w-[2.2rem] flex items-center gap-x-5 text-secondary-text pt-4 mt-auto">
+          <div className="[&_svg]:h-[2.2rem] [&_svg]:w-[2.2rem] flex items-center gap-x-5 text-secondary-text pt-4">
             <X className="hover:text-offWhite" />
             <Github className="hover:text-offWhite" />
             <Discord className="hover:text-offWhite" />
@@ -23,15 +24,15 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap gap-8 md:gap-12">
           {footerLinks.map((link) => (
             <div
               key={link.title}
-              className="min-w-[50%] lg:min-w-[20rem] mt-10 lg:mt-0"
+              className="min-w-[50%] lg:min-w-[18rem]"
             >
               <h3 className="text-md mb-3">{link.title}</h3>
 
-              <ul className="">
+              <ul>
                 {link.subtitles.map((sublinks) => (
                   <li
                     key={sublinks}
@@ -46,7 +47,9 @@ export const Footer = () => {
         </div>
       </Container>
       <Container className="py-10 border-t border-transparent-border">
-        <p className="text-secondary-text">© Supabase Inc</p>
+        <p className="text-secondary-text">
+          © {new Date().getFullYear()} Strivehawk Afrique – Filiale de Strivehawk US
+        </p>
       </Container>
     </footer>
   );

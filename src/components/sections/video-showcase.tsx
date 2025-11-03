@@ -6,9 +6,10 @@ export function VideoShowcase() {
     <>
       <Container className="py-16 flex flex-col items-center">
         <Title className="mb-10">
-          Stay productive and manage your app <br />
+          Restez productifs et pilotez vos opérations
+          <br />
           <span className="text-secondary-text">
-            without leaving the dashboard
+            sans quitter votre tableau de bord Strivehawk
           </span>
         </Title>
 
@@ -26,7 +27,7 @@ export function VideoShowcase() {
             className="flex-1 max-w-lg md:max-w-3xl lg:max-w-7xl"
           >
             <source src="/supabase-rls.webm" type="video/webm" />
-            Your browser does not support the video tag.
+            Votre navigateur ne supporte pas la vidéo.
           </video>
         </div>
       </Container>
