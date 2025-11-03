@@ -26,55 +26,189 @@ import { Triangle } from "@/components/icon/triangle";
 import { ChatGpt } from "@/components/icon/chat-gpt";
 import { LangChain } from "@/components/icon/langchain";
 import { Expo } from "@/components/icon/expo";
+import { Database, Fingerprint, RefreshCw } from "lucide-react";
+
+interface NavItem {
+  title: string;
+  href?: string;
+  desc?: string;
+  icon?: React.ElementType;
+}
+
+interface NavColumn {
+  heading: string;
+  items: NavItem[];
+}
 
 interface NavLink {
   title: string;
-  href: string;
-}
-
-interface FooterLinkItem {
-  label: string;
   href?: string;
+  megaMenu?: { columns: NavColumn[] };
 }
 
-interface FooterColumn {
-  title: string;
-  items: FooterLinkItem[];
-}
+import {
+  CalendarClock,
+  SendHorizonal,
+  Sparkles,
+  BookOpen,
+  Puzzle,
+  Layout,
+  LifeBuoy,
+  Code2,
+  Github,
+  Users,
+  Briefcase,
+  Calendar,
+  FileText,
+  Building2,
+} from "lucide-react";
 
 export const navLinks: NavLink[] = [
-  { title: "Accueil", href: "/" },
+  {
+    title: "Solutions",
+    megaMenu: {
+      columns: [
+        {
+          heading: "Cloud & Infrastructure",
+          items: [
+            {
+              title: "Cloud sécurisé",
+              desc: "Microsoft 365, Azure Virtual Desktop",
+              icon: Database,
+            },
+            {
+              title: "Accès distant",
+              desc: "VPN, sauvegardes & reprise",
+              icon: RefreshCw,
+            },
+            {
+              title: "Support IT",
+              desc: "Supervision, help desk & maintenance",
+              icon: LifeBuoy,
+            },
+          ],
+        },
+        {
+          heading: "Cybersécurité",
+          items: [
+            {
+              title: "Protection totale",
+              desc: "Firewall, endpoint & anti-phishing",
+              icon: Fingerprint,
+            },
+            {
+              title: "Conformité",
+              desc: "HIPAA, PCI-DSS, RGPD",
+              icon: FileText,
+            },
+            {
+              title: "Audit & formation",
+              desc: "Sensibilisation et plans d’action",
+              icon: BookOpen,
+            },
+          ],
+        },
+        {
+          heading: "Innovation",
+          items: [
+            {
+              title: "Digitalisation",
+              desc: "CRM, automatisation & intégrations",
+              icon: Sparkles,
+            },
+            {
+              title: "Développement",
+              desc: "Web, mobile & IA sur mesure",
+              icon: Code2,
+            },
+            {
+              title: "Conseil",
+              desc: "Vision stratégique & accompagnement",
+              icon: Users,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    title: "Entreprise",
+    megaMenu: {
+      columns: [
+        {
+          heading: "Strivehawk Afrique",
+          items: [
+            { title: "À propos", href: "/a-propos", icon: Building2 },
+            { title: "Notre équipe", href: "/a-propos", icon: Users },
+            { title: "Mission & Vision", href: "/a-propos", icon: Trophy },
+          ],
+        },
+        {
+          heading: "Ressources",
+          items: [
+            { title: "Études de cas", href: "/services", icon: Layout },
+            { title: "Partenariats", href: "#partenariats", icon: Briefcase },
+            { title: "Actualités", icon: Calendar },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    title: "Ressources",
+    megaMenu: {
+      columns: [
+        {
+          heading: "Guides",
+          items: [
+            { title: "Livres blancs", icon: BookOpen },
+            { title: "Checklists IT", icon: Puzzle },
+            { title: "Webinaires", icon: CalendarClock },
+          ],
+        },
+        {
+          heading: "Communauté",
+          items: [
+            { title: "Support", icon: LifeBuoy },
+            { title: "Open source", icon: Github },
+            { title: "Partenaires", icon: Briefcase },
+          ],
+        },
+        {
+          heading: "Outils",
+          items: [
+            { title: "Templates", icon: Layout },
+            { title: "API & intégrations", icon: SendHorizonal },
+            { title: "Blog", icon: FileText },
+          ],
+        },
+      ],
+    },
+  },
   { title: "À propos", href: "/a-propos" },
   { title: "Services", href: "/services" },
-  { title: "Partenaires", href: "/#partenaires" },
   { title: "Contact", href: "/contact" },
 ];
 
-export const footerLinks: FooterColumn[] = [
+export const footerLinks = [
   {
     title: "Liens rapides",
-    items: [
-      { label: "Accueil", href: "/" },
-      { label: "À propos", href: "/a-propos" },
-      { label: "Services", href: "/services" },
-      { label: "Partenaires", href: "/#partenaires" },
-      { label: "Contact", href: "/contact" },
-    ],
+    subtitles: ["Accueil", "À propos", "Services", "Partenaires", "Contact"],
   },
   {
     title: "Contact",
-    items: [
-      { label: "Email : lome@strivehawk.com", href: "mailto:lome@strivehawk.com" },
-      { label: "Téléphone : +228 70 75 88 04", href: "tel:+22870758804" },
-      { label: "Adresse : Lomé, Togo — Afrique de l’Ouest" },
+    subtitles: [
+      "Email : lome@strivehawk.com",
+      "Téléphone : +228 70 75 88 04",
+      "Adresse : Lomé, Togo",
     ],
   },
   {
     title: "Liens légaux",
-    items: [
-      { label: "Mentions légales" },
-      { label: "Politique de confidentialité" },
-      { label: "Conditions générales" },
+    subtitles: [
+      "Mentions légales",
+      "Politique de confidentialité",
+      "Conditions générales",
     ],
   },
 ];
@@ -85,7 +219,6 @@ export const icons = [
   { component: GithubIcon, id: 3 },
   { component: HumataIcon, id: 4 },
   { component: KreaIcon, id: 5 },
-  // { component: LangChain, id: 6 },
   { component: LoopIcon, id: 7 },
   { component: MobbinIcon, id: 8 },
   { component: OnePassword, id: 9 },
@@ -111,89 +244,109 @@ export const frameworkIcons = [
 
 export const starterKit = [
   {
-    title: "Stripe Subscriptions Starter",
+    title: "Kit de migration Cloud",
     description:
-      "The all-in-one subscription starter kit for high-performance SaaS applications, powered by Stripe, Supabase, and Vercel.",
+      "Planifiez la modernisation de votre infrastructure avec un guide complet pour Azure et Microsoft 365.",
     image: [NextJsIcon, Stripe, Triangle],
-    link: "View Template",
+    link: "Voir la ressource",
   },
   {
-    title: "Next.js Starter",
+    title: "Checklist cybersécurité",
     description:
-      "A Next.js App Router template configured with cookie-based auth using Supabase, TypeScript, and Tailwind CSS.",
+      "Assurez la conformité HIPAA, PCI-DSS et RGPD grâce à une feuille de route pratique pour vos équipes.",
     image: [NextJsIcon, Triangle],
-    link: "View Template",
+    link: "Télécharger",
   },
   {
-    title: "AI Chatbot",
+    title: "Automatisation marketing",
     description:
-      "An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.",
+      "Découvrez comment connecter vos outils CRM et marketing pour gagner en efficacité.",
     image: [NextJsIcon, ChatGpt, Triangle],
-    link: "View Template",
+    link: "Voir la ressource",
   },
   {
-    title: "LangChain + Next.js Starter",
+    title: "Guide intégrations métiers",
     description:
-      "Starter template and example use-cases for LangChain projects in Next.js, including chat, agents, and retrieval.",
+      "Intégrez Zoho, QuickBooks ou Shopify à vos workflows sans interrompre vos opérations.",
     image: [LangChain, NextJsIcon],
-    link: "View Template",
+    link: "Voir la ressource",
   },
   {
-    title: "Flutter User Management",
+    title: "Support IT proactif",
     description:
-      "Get started with Supabase and Flutter by building a user management app with auth, file storage, and database.",
+      "Mettez en place un help desk hybride et une supervision continue pour vos équipes.",
     image: [FlutterIcon],
-    link: "View Template",
+    link: "Découvrir",
   },
   {
-    title: "Expo React Native Starter",
+    title: "Starter IA conversationnelle",
     description:
-      "An extended version of create-t3-turbo implementing authentication on both the web and mobile applications.",
+      "Déployez un assistant intelligent adapté à vos processus internes et à votre service client.",
     image: [Expo],
-    link: "View Template",
+    link: "Voir la ressource",
   },
 ];
 
 export const testimonials = [
   {
     id: "1",
-    displayName: "Aïcha K.",
-    initials: "AK",
-    role: "Directrice IT — Banque régionale",
+    username: "abena_k",
+    displayName: "Abena K.",
     content:
-      "Strivehawk a modernisé notre infrastructure sans interrompre nos services. Leur équipe locale comprend vraiment nos contraintes et répond avec une grande réactivité.",
-    likes: 124,
-    shares: 36,
+      "« Grâce à Strivehawk, nous avons sécurisé nos accès distants en moins d’un mois. Nos équipes peuvent travailler partout sans craindre pour les données sensibles. »",
+    timestamp: "2024-03-12T10:00:00Z",
+    likes: 120,
+    retweets: 18,
   },
   {
     id: "2",
-    displayName: "Mawuli A.",
-    initials: "MA",
-    role: "Fondateur — Startup logistique",
+    username: "yves_tech",
+    displayName: "Yves T.",
     content:
-      "Nous avons gagné plusieurs heures par semaine grâce aux automatisations mises en place. Le suivi du projet a été clair, humain et très professionnel.",
-    likes: 98,
-    shares: 22,
+      "« Leur support est réellement proactif. Strivehawk détecte les incidents avant nous et nous informe des actions menées. »",
+    timestamp: "2024-05-04T09:30:00Z",
+    likes: 95,
+    retweets: 12,
   },
   {
     id: "3",
-    displayName: "Clarisse D.",
-    initials: "CD",
-    role: "Responsable RH — Groupe industriel",
+    username: "amina_ops",
+    displayName: "Amina O.",
     content:
-      "Les solutions cloud déployées par Strivehawk ont sécurisé nos accès distants et facilité l’onboarding de nos équipes. Un partenaire de confiance !",
-    likes: 142,
-    shares: 31,
+      "« Nous avons automatisé notre CRM et gagné deux jours de production par semaine. L’équipe Strivehawk maîtrise vraiment nos enjeux. »",
+    timestamp: "2024-06-20T14:15:00Z",
+    likes: 140,
+    retweets: 22,
   },
   {
     id: "4",
-    displayName: "Souleymane T.",
-    initials: "ST",
-    role: "CEO — Cabinet de conseil",
+    username: "koffi_enterprise",
+    displayName: "Koffi E.",
     content:
-      "Leur expertise cybersécurité nous a permis d’obtenir nos certifications plus rapidement. Ils ont su vulgariser les enjeux pour toutes nos équipes.",
-    likes: 167,
-    shares: 44,
+      "« Le déploiement du VPN et des sauvegardes cloud nous a permis de poursuivre nos activités même pendant les coupures réseau. »",
+    timestamp: "2024-07-08T11:05:00Z",
+    likes: 160,
+    retweets: 28,
+  },
+  {
+    id: "5",
+    username: "selma_finance",
+    displayName: "Selma F.",
+    content:
+      "« L’audit de conformité Strivehawk nous a aidés à répondre aux exigences de nos partenaires internationaux. »",
+    timestamp: "2024-08-14T08:45:00Z",
+    likes: 110,
+    retweets: 16,
+  },
+  {
+    id: "6",
+    username: "marc_digital",
+    displayName: "Marc D.",
+    content:
+      "« Leur équipe locale comprend parfaitement les réalités du terrain. Nous recommandons Strivehawk à tous nos partenaires. »",
+    timestamp: "2024-09-02T16:20:00Z",
+    likes: 180,
+    retweets: 24,
   },
 ];
 
@@ -201,7 +354,7 @@ export const customerStories = [
   {
     main: {
       img: ChatBaseIcon,
-      text: "Maergo's Express Delivery: How Supabase Helped Achieve Scalability, Speed, and Cost Saving",
+      text: "Banque régionale : continuité d’activité garantie avec une infrastructure hybride sécurisée.",
     },
 
     side: {
@@ -212,7 +365,7 @@ export const customerStories = [
   {
     main: {
       img: Expo,
-      text: "Scaling securely: one million users in 7 months protected with Supabase Auth",
+      text: "Groupe de santé : 7 000 dossiers patients protégés grâce au monitoring Strivehawk 24/7.",
     },
 
     side: {
@@ -223,7 +376,7 @@ export const customerStories = [
   {
     main: {
       img: KreaIcon,
-      text: "Bootstrapped founder builds an AI app with Supabase and scales to $1M in 5 months.",
+      text: "Retail panafricain : automatisation des flux e-commerce et intégration Shopify x ERP.",
     },
 
     side: {

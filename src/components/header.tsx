@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { Button } from "./button";
 import { Container } from "./container";
+import { Github } from "./icon/github";
 import { Logo } from "./icon/logo";
 import { navLinks } from "@/utils/constant";
-import { Menu, X } from "lucide-react";
-import { Button } from "./button";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
   const isNavbarOpen = () => {
     setIsOpen(!isOpen);
   };
@@ -31,6 +33,12 @@ export const Header = () => {
     show: { opacity: 1, y: 0 },
   };
 
+  const dropdownVariants = {
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20, transition: { duration: 0.2 } },
+  };
+
   return (
     <header className="fixed top-0 backdrop-blur-md z-50 w-full border-b border-transparent-border bg-background/60">
       <Container className="h-navigation-height flex items-center justify-between w-full">
@@ -38,21 +46,82 @@ export const Header = () => {
           <Logo />
 
           {/* desktop */}
-          <nav className="lg:flex space-x-6 pl-8 hidden">
-            {navLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className="text-sm hover:text-green transition-colors"
+          <div className="lg:flex space-x-5 pl-8 hidden relative">
+            {navLinks.map((link, idx) => (
+              <div
+                key={idx}
+                onMouseEnter={() => setActiveIdx(activeIdx === idx ? null : idx)}
+                onMouseLeave={() => setActiveIdx(null)}
               >
-                {link.title}
-              </Link>
+                <ul className="group">
+                  <li className="text-sm hover:text-green transition-colors flex items-center gap-1">
+                    <p>{link.title}</p>
+                    {link.megaMenu && (
+                      <ChevronDown
+                        size={12}
+                        className="group-hover:rotate-180 transition-transform"
+                      />
+                    )}
+                  </li>
+                </ul>
+                <AnimatePresence mode="wait">
+                  {activeIdx != null && activeIdx === idx && link.megaMenu && (
+                    <motion.div
+                      key={link.title}
+                      variants={dropdownVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      transition={{ duration: 0.3 }}
+                      className="absolute w-[450px] h-fit bg-black z-50 top-6 p-4 rounded-md border border-transparent-border grid grid-cols-2 text-md font-medium"
+                    >
+                      {link.megaMenu?.columns.map((item, columnIdx) => (
+                        <motion.div key={columnIdx}>
+                          {item?.heading && (
+                            <div className="mt-3 mb-1 text-secondary-text">{item.heading}</div>
+                          )}
+                          <div>
+                            {item.items.map((text, itemIdx) => (
+                              <motion.div
+                                key={itemIdx}
+                                variants={childVariants}
+                                className="flex items-center justify-start gap-x-3 mb-4 hover:text-green hover:transition-colors cursor-pointer"
+                              >
+                                <div>
+                                  {text.icon ? (
+                                    <text.icon className="size-4 text-green-500" />
+                                  ) : null}
+                                </div>
+
+                                {text.href ? (
+                                  <Link href={text.href}>{text.title}</Link>
+                                ) : (
+                                  <div>{text.title}</div>
+                                )}
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
-          </nav>
+          </div>
 
           {/* mobile */}
           <div className="transition-transform lg:hidden">
-            <div className="flex items-center gap-x-2">
+            <div className="flex item-centers gap-x-2">
+              <Button variant="tertiary" size="small">
+                <Link
+                  href="mailto:lome@strivehawk.com"
+                  className="flex items-center gap-x-1 text-secondary-text hover:text-offWhite"
+                >
+                  <Github className="w-6 h-6" />
+                  Suivre Strivehawk
+                </Link>
+              </Button>
               {isOpen ? (
                 <X className="absolute z-40 top-5 right-4" onClick={isNavbarOpen} />
               ) : (
@@ -75,19 +144,80 @@ export const Header = () => {
                     initial="hidden"
                     animate="show"
                   >
-                    {navLinks.map((link) => (
-                      <motion.div
-                        variants={childVariants}
-                        className="text-left px-5"
-                        key={link.title}
-                      >
-                        <Link
-                          href={link.href}
-                          onClick={() => setIsOpen(false)}
-                          className="block text-left py-3 text-lg font-medium hover:text-green transition-colors"
+                    {navLinks.map((link, idx) => (
+                      <motion.div variants={childVariants} className="text-left px-5" key={idx}>
+                        <div
+                          className={`text-left py-3 text-lg font-medium hover:text-green transition-colors cursor-pointer ${
+                            activeIdx === idx ? "text-green transition-colors" : ""
+                          }`}
+                          onClick={() =>
+                            setActiveIdx(activeIdx === idx ? null : idx)
+                          }
                         >
-                          {link.title}
-                        </Link>
+                          <div className="flex items-center justify-between hover:transparent-border">
+                            <p>{link.title}</p>
+                            {link.megaMenu && (
+                              <ChevronDown
+                                size={12}
+                                className={`${
+                                  activeIdx === idx
+                                    ? "rotate-180 transition-transform text-green"
+                                    : ""
+                                }`}
+                              />
+                            )}
+                          </div>
+                        </div>
+
+                        {link.megaMenu ? (
+                          activeIdx !== null &&
+                          activeIdx === idx && (
+                            <motion.div
+                              variants={parentVariants}
+                              initial="hidden"
+                              animate="show"
+                              className="text-left text-md transition-transform"
+                            >
+                              {link.megaMenu?.columns.map((item, columnIdx) => (
+                                <div key={columnIdx} className="text-offWhite/80 text-sm">
+                                  {item?.heading && (
+                                    <div className="mt-3 mb-1 text-secondary-text">
+                                      {item.heading}
+                                    </div>
+                                  )}
+                                  {item.items.map((text, itemIdx) => (
+                                    <motion.div
+                                      key={itemIdx}
+                                      variants={childVariants}
+                                      className="flex flex-col gap-1 mb-3 hover:text-green hover:transition-colors cursor-pointer"
+                                    >
+                                      {text.href ? (
+                                        <Link href={text.href} onClick={() => setIsOpen(false)}>
+                                          {text.title}
+                                        </Link>
+                                      ) : (
+                                        <span>{text.title}</span>
+                                      )}
+                                      {text.desc ? (
+                                        <span className="text-xs text-secondary-text">
+                                          {text.desc}
+                                        </span>
+                                      ) : null}
+                                    </motion.div>
+                                  ))}
+                                </div>
+                              ))}
+                            </motion.div>
+                          )
+                        ) : (
+                          <Link
+                            href={link.href ?? "#"}
+                            onClick={() => setIsOpen(false)}
+                            className="block text-left py-3 text-lg font-medium hover:text-green transition-colors"
+                          >
+                            {link.title}
+                          </Link>
+                        )}
                       </motion.div>
                     ))}
 

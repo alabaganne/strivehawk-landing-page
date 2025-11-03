@@ -5,35 +5,57 @@ import { Repeat2, ThumbsUp } from "lucide-react";
 export function TestimonialMarquee() {
   return (
     <Marquee className="overflow-hidden mask-gradient-custom flex items-center mb-8 mask-image-custom group">
-      <div className="flex animate-infinite-scroll [--animation-delay:120s] group-hover:[animation-play-state:paused]">
-        {[...testimonials, ...testimonials].map((data, index) => (
+      <div className="flex animate-infinite-scroll [--animation-delay:200s] group-hover:[animation-play-state:paused]">
+        {testimonials.map((data) => (
           <div
-            key={`${data.id}-${index}`}
-            className="border border-transparent-border flex flex-col mx-4 min-w-[24rem] max-w-[26rem] rounded-3xl bg-black/40 p-6 shadow-lg shadow-emerald-500/10"
+            key={data.id}
+            className="border bo available border-transparent-border flex flex-col items-center mx-4 min-w-[40rem] p-5 rounded-3xl space-y-2 h-[30rem]"
           >
-            <div className="flex items-center gap-x-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-green via-brand to-primary-button text-black font-semibold">
-                {data.initials}
-              </div>
-              <div>
-                <p className="text-md font-semibold text-offWhite">{data.displayName}</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-secondary-text">
-                  {data.role}
-                </p>
-              </div>
+            <div className="flex items-center gap-x-2 w-full">
+              <div className="w-10 h-10 rounded-full border border-transparent-border bg-gradient-to-tr from-green via-brand to-primary-button"></div>
+              <p className="text-md">{data.displayName}</p>
             </div>
 
-            <p className="mt-4 text-sm leading-relaxed text-secondary-text">
-              {data.content}
-            </p>
+            <div className="flex flex-col justify-between h-full space-y-2">
+              <p className="text-sm text-secondary-text">{data.content}</p>
 
-            <div className="mt-6 flex items-center gap-6 text-secondary-text text-xs">
-              <span className="flex items-center gap-2">
-                <ThumbsUp size={16} /> {data.likes}
-              </span>
-              <span className="flex items-center gap-2">
-                <Repeat2 size={16} /> {data.shares}
-              </span>
+              <div className="flex items-center w-full gap-x-4">
+                <div className="flex items-center gap-x-2">
+                  <ThumbsUp size={16} />
+                  <p className="text-sm">{data.likes}</p>
+                </div>
+                <div className="flex items-center gap-x-2">
+                  <Repeat2 size={16} />
+                  <p className="text-sm">{data.likes}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {testimonials.map((data) => (
+          <div
+            key={data.id}
+            className="border border-transparent-border flex flex-col items-center mx-4 min-w-[40rem] p-5 rounded-3xl space-y-2 h-[30rem]"
+          >
+            <div className="flex items-center gap-x-2 w-full">
+              <div className="w-10 h-10 rounded-full border border-transparent-border bg-gradient-to-tr from-green via-brand to-primary-button"></div>
+              <p className="text-md">{data.displayName}</p>
+            </div>
+
+            <div className="flex flex-col justify-between h-full space-y-2">
+              <p className="text-sm text-secondary-text">{data.content}</p>
+
+              <div className="flex items-center w-full gap-x-4">
+                <div className="flex items-center gap-x-2">
+                  <ThumbsUp size={16} />
+                  <p className="text-sm">{data.likes}</p>
+                </div>
+                <div className="flex items-center gap-x-2">
+                  <Repeat2 size={16} />
+                  <p className="text-sm">{data.likes}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}

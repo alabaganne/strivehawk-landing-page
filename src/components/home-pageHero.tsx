@@ -14,7 +14,7 @@ export const HeroTitle = ({ children, className }: HeroElementsProps) => {
   return (
     <h1
       className={cn(
-        "text-3xl md:text-6xl leading-tight font-semibold",
+        "text-2xl md:text-5xl leading-none tracking-widest",
         className
       )}
     >
@@ -24,11 +24,7 @@ export const HeroTitle = ({ children, className }: HeroElementsProps) => {
 };
 
 export const HerosubTitle = ({ children, className }: HeroElementsProps) => {
-  return (
-    <p className={cn("text-base md:text-xl py-4 leading-relaxed", className)}>
-      {children}
-    </p>
-  );
+  return <p className={cn("text-md md:text-lg py-4", className)}>{children}</p>;
 };
 
 export const Hero = ({ children, className }: HeroProps) => {

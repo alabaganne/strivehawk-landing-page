@@ -1,13 +1,14 @@
-import { Header } from "@/components/header";
+import { CTA } from "@/components/sections/cta";
 import { Footer } from "@/components/sections/footer";
+import { Header } from "@/components/header";
 import { Container } from "@/components/container";
-import { TestimonialMarquee } from "@/components/testimonial-marquee";
+import { SubTitle, Title } from "@/components/title";
 
 const services = [
   {
     title: "Solution cloud avec accès à distance sécurisé",
-    subtitle: "Flexibilité, mobilité, sécurité.",
-    items: [
+    intro: "Flexibilité, mobilité, sécurité.",
+    points: [
       "Microsoft 365 & Azure Virtual Desktop",
       "VPN & accès sécurisé",
       "Sauvegardes & reprise après sinistre",
@@ -16,8 +17,8 @@ const services = [
   },
   {
     title: "Infrastructures & Support IT",
-    subtitle: "Une assistance proactive, un système toujours disponible.",
-    items: [
+    intro: "Une assistance proactive, un système toujours disponible.",
+    points: [
       "Supervision & help desk",
       "Gestion d’appareils, imprimantes et Wi-Fi",
       "Mises à jour & maintenance Windows",
@@ -26,8 +27,8 @@ const services = [
   },
   {
     title: "Cybersécurité & Conformité",
-    subtitle: "Prévenir les menaces. Protéger la confiance.",
-    items: [
+    intro: "Prévenir les menaces. Protéger la confiance.",
+    points: [
       "Firewalls, antivirus & sécurité endpoint",
       "Protection email & prévention phishing",
       "Conformité HIPAA, PCI-DSS, RGPD",
@@ -36,8 +37,8 @@ const services = [
   },
   {
     title: "Digitalisation & Automatisation",
-    subtitle: "Simplifiez vos processus et gagnez du temps.",
-    items: [
+    intro: "Simplifiez vos processus et gagnez du temps.",
+    points: [
       "Création de sites & identité de marque",
       "Automatisation CRM & email marketing",
       "Intégrations (Zoho, QuickBooks, Shopify...)",
@@ -46,8 +47,8 @@ const services = [
   },
   {
     title: "Développement Web, Mobile & IA",
-    subtitle: "Des solutions intelligentes et évolutives.",
-    items: [
+    intro: "Des solutions intelligentes et évolutives.",
+    points: [
       "Applications web & mobiles",
       "Landing pages & bases de données",
       "Intégration de chatbots IA",
@@ -59,65 +60,41 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="pt-navigation-height">
-        <section className="py-20">
-          <Container className="space-y-12">
-            <div className="space-y-6 max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-green">Services</p>
-              <h1 className="text-3xl md:text-5xl font-semibold">
-                Nos solutions technologiques, pensées pour vous.
-              </h1>
-              <p className="text-secondary-text text-lg leading-relaxed">
-                Chaque entreprise a ses défis. Chez Strivehawk, nous concevons des
-                solutions sur mesure pour simplifier, sécuriser et accélérer votre
-                croissance.
-              </p>
-            </div>
+      <main className="pt-32 space-y-16">
+        <Container className="space-y-6 text-center max-w-3xl mx-auto">
+          <Title>Nos solutions technologiques, pensées pour vous.</Title>
+          <SubTitle>
+            Chaque entreprise a ses défis. Chez Strivehawk, nous concevons des solutions sur mesure pour simplifier, sécuriser et accélérer votre croissance.
+          </SubTitle>
+        </Container>
 
-            <div className="space-y-8">
-              {services.map((service) => (
-                <div
-                  key={service.title}
-                  className="rounded-3xl border border-transparent-border bg-black/40 p-8 shadow-lg shadow-emerald-500/10"
-                >
-                  <div className="space-y-4">
-                    <h2 className="text-2xl md:text-3xl font-semibold text-offWhite">
-                      {service.title}
-                    </h2>
-                    <p className="text-secondary-text text-lg">
-                      {service.subtitle}
-                    </p>
-                    <ul className="grid gap-3 md:grid-cols-2 text-secondary-text">
-                      {service.items.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <span className="mt-1 h-2 w-2 rounded-full bg-green"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
+        <Container className="space-y-12">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="border border-transparent-border rounded-2xl p-6 bg-tertiary-color/30 space-y-4"
+            >
+              <div className="space-y-2">
+                <h2 className="text-2xl font-semibold">{service.title}</h2>
+                <p className="text-secondary-text text-sm md:text-base">{service.intro}</p>
+              </div>
+              <ul className="grid gap-2 text-sm md:text-base text-secondary-text list-disc list-inside">
+                {service.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
             </div>
-          </Container>
-        </section>
+          ))}
+        </Container>
 
-        <section className="py-20 border-t border-transparent-border bg-background/60">
-          <Container className="space-y-8">
-            <div className="space-y-4 max-w-3xl">
-              <h2 className="text-3xl md:text-4xl font-semibold">
-                Ce sont nos clients qui en parlent le mieux.
-              </h2>
-              <p className="text-secondary-text text-lg">
-                Découvrez les retours d’expérience des organisations qui nous
-                font confiance pour sécuriser et accélérer leur transformation
-                digitale.
-              </p>
-            </div>
-            <TestimonialMarquee />
-          </Container>
-        </section>
+        <Container className="space-y-6 text-center">
+          <Title>Ce sont nos clients qui en parlent le mieux.</Title>
+          <SubTitle>
+            Des retours concrets d’organisations qui ont confié leur transformation numérique à Strivehawk.
+          </SubTitle>
+        </Container>
       </main>
+      <CTA />
       <Footer />
     </>
   );

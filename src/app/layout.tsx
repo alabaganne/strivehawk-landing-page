@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Strivehawk Togo",
+  title: "Strivehawk Afrique",
   description:
-    "Solutions IT, cloud et cybersécurité pour les entreprises d’Afrique de l’Ouest.",
+    "Strivehawk accompagne les entreprises d’Afrique de l’Ouest avec des solutions IT, cloud et cybersécurité centrées sur l’humain.",
 };
 
 export default function RootLayout({

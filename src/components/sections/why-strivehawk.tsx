@@ -1,4 +1,5 @@
 import { Container } from "../container";
+import { SubTitle, Title } from "../title";
 
 const pillars = [
   {
@@ -11,45 +12,31 @@ const pillars = [
   },
   {
     title: "Résilience",
-    description:
-      "Vos systèmes et vos équipes restent solides, même face aux imprévus.",
+    description: "Vos systèmes et vos équipes restent solides face aux imprévus.",
   },
 ];
 
 export const WhyStrivehawk = () => {
   return (
-    <section className="py-20 border-t border-transparent-border bg-background/60">
-      <Container className="space-y-12">
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-3xl md:text-5xl font-semibold">
-            La technologie est puissante. Mais c’est l’humain qui fait la
-            différence.
-          </h2>
-          <p className="text-secondary-text text-lg leading-relaxed">
-            Chez Strivehawk, nous croyons que la technologie ne vaut que si elle
-            améliore la vie, simplifie le travail et renforce les relations
-            humaines. C’est pourquoi nous développons des solutions centrées sur
-            vos équipes, vos défis et votre réalité, pas seulement sur les
-            systèmes.
-          </p>
-        </div>
+    <Container className="py-16">
+      <div className="space-y-6 text-center max-w-4xl mx-auto">
+        <Title>La technologie est puissante. Mais c’est l’humain qui fait la différence.</Title>
+        <SubTitle>
+          Chez Strivehawk, nous croyons que la technologie ne vaut que si elle améliore la vie, simplifie le travail et renforce les relations humaines. C’est pourquoi nous développons des solutions centrées sur vos équipes, vos défis et votre réalité.
+        </SubTitle>
+      </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="rounded-2xl border border-transparent-border bg-black/40 p-8 shadow-lg shadow-emerald-500/10"
-            >
-              <h3 className="text-xl font-semibold text-offWhite">
-                {pillar.title}
-              </h3>
-              <p className="mt-3 text-secondary-text leading-relaxed">
-                {pillar.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        {pillars.map((pillar) => (
+          <div
+            key={pillar.title}
+            className="border border-transparent-border rounded-2xl p-6 text-left bg-tertiary-color/30"
+          >
+            <h3 className="text-lg font-medium mb-3">{pillar.title}</h3>
+            <p className="text-sm text-secondary-text">{pillar.description}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
   );
 };

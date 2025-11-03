@@ -1,101 +1,80 @@
-import { Header } from "@/components/header";
+import { CTA } from "@/components/sections/cta";
 import { Footer } from "@/components/sections/footer";
+import { Header } from "@/components/header";
 import { Container } from "@/components/container";
+import { SubTitle, Title } from "@/components/title";
 
-const values = [
+const valeurs = [
   {
     title: "Résilience",
-    description: "Nous anticipons, adaptons et assurons la continuité.",
+    description: "Nous anticipons, adaptons et assurons la continuité de vos opérations critiques.",
   },
   {
     title: "Innovation",
-    description: "Chaque projet est une opportunité d’innover.",
+    description: "Chaque projet est une opportunité de créer des solutions qui vous font avancer.",
   },
   {
     title: "Fiabilité",
-    description: "Nous bâtissons des relations durables basées sur la confiance.",
+    description: "Nous bâtissons des relations durables basées sur la confiance et la transparence.",
   },
 ];
 
-export default function AboutPage() {
+export default function AproposPage() {
   return (
     <>
       <Header />
-      <main className="pt-navigation-height">
-        <section className="py-20">
-          <Container className="space-y-10">
-            <div className="space-y-6 max-w-4xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-green">Qui nous sommes</p>
-              <h1 className="text-3xl md:text-5xl font-semibold">
-                Une équipe de passionnés, dédiée à votre réussite.
-              </h1>
-              <p className="text-secondary-text text-lg leading-relaxed">
-                Strivehawk Afrique est une filiale du groupe Strivehawk, née de la
-                volonté d’offrir aux entreprises africaines des solutions
-                technologiques de niveau international, tout en respectant leurs
-                spécificités locales. Nous unissons l’expertise américaine et la
-                connaissance du terrain africain pour concevoir des solutions
-                concrètes, humaines et durables.
-              </p>
-            </div>
+      <main className="pt-32 space-y-16">
+        <Container className="space-y-6 text-center max-w-3xl mx-auto">
+          <Title>Une équipe de passionnés, dédiée à votre réussite.</Title>
+          <SubTitle>
+            Strivehawk Afrique est une filiale du groupe Strivehawk, née de la volonté d’offrir aux entreprises africaines des solutions technologiques de niveau international, tout en respectant leurs spécificités locales.
+          </SubTitle>
+          <p className="text-secondary-text text-sm md:text-base">
+            Nous unissons l’expertise américaine et la connaissance du terrain africain pour concevoir des solutions concrètes, humaines et durables.
+          </p>
+        </Container>
 
-            <div className="grid gap-10 md:grid-cols-2">
-              <div className="rounded-3xl border border-transparent-border bg-black/40 p-8 shadow-lg shadow-emerald-500/10 space-y-4">
-                <h2 className="text-2xl font-semibold">Vision</h2>
-                <p className="text-secondary-text leading-relaxed">
-                  Bâtir un écosystème numérique africain solide, collaboratif et
-                  inclusif, où la technologie soutient le potentiel humain.
-                </p>
-              </div>
-              <div className="rounded-3xl border border-transparent-border bg-black/40 p-8 shadow-lg shadow-emerald-500/10 space-y-4">
-                <h2 className="text-2xl font-semibold">Mission</h2>
-                <p className="text-secondary-text leading-relaxed">
-                  Accompagner les entreprises d’Afrique de l’Ouest dans leur
-                  transformation digitale grâce à des solutions fiables, accessibles
-                  et centrées sur les personnes.
-                </p>
-              </div>
-            </div>
+        <Container className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Vision</h2>
+            <p className="text-secondary-text text-sm md:text-base">
+              Bâtir un écosystème numérique africain solide, collaboratif et inclusif, où la technologie soutient le potentiel humain.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Mission</h2>
+            <p className="text-secondary-text text-sm md:text-base">
+              Accompagner les entreprises d’Afrique de l’Ouest dans leur transformation digitale grâce à des solutions fiables, accessibles et centrées sur les personnes.
+            </p>
+          </div>
+        </Container>
 
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-semibold">
-                Nos trois piliers fondamentaux.
-              </h2>
-              <div className="grid gap-6 md:grid-cols-3">
-                {values.map((value) => (
-                  <div
-                    key={value.title}
-                    className="rounded-2xl border border-transparent-border bg-black/40 p-6 shadow-lg shadow-emerald-500/10"
-                  >
-                    <h3 className="text-xl font-semibold text-offWhite">
-                      {value.title}
-                    </h3>
-                    <p className="mt-3 text-secondary-text leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                ))}
+        <Container className="space-y-8">
+          <Title className="text-center">Nos trois piliers fondamentaux.</Title>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {valeurs.map((valeur) => (
+              <div
+                key={valeur.title}
+                className="border border-transparent-border rounded-2xl p-6 bg-tertiary-color/30"
+              >
+                <h3 className="text-lg font-medium mb-3">{valeur.title}</h3>
+                <p className="text-sm text-secondary-text">{valeur.description}</p>
               </div>
-              <p className="text-secondary-text text-lg leading-relaxed">
-                Chez Strivehawk, chaque solution commence par une écoute. Parce
-                qu’avant les ordinateurs, il y a des personnes.
-              </p>
-            </div>
+            ))}
+          </div>
+          <p className="text-secondary-text text-center text-sm md:text-base">
+            Chez Strivehawk, chaque solution commence par une écoute. Parce qu’avant les ordinateurs, il y a des personnes.
+          </p>
+        </Container>
 
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-semibold">
-                Une force mondiale au service de vos ambitions.
-              </h2>
-              <p className="text-secondary-text text-lg leading-relaxed max-w-4xl">
-                Portée par l’expertise internationale de Strivehawk et ses
-                partenaires technologiques, notre équipe locale met à votre
-                disposition des solutions reconnues pour leur fiabilité et leur
-                performance.
-              </p>
-            </div>
-          </Container>
-        </section>
+        <Container className="space-y-6" id="partenariats">
+          <Title className="text-center">Une force mondiale au service de vos ambitions.</Title>
+          <SubTitle className="text-center">
+            Portée par l’expertise internationale de Strivehawk et ses partenaires technologiques, notre équipe locale met à votre disposition des solutions reconnues pour leur fiabilité et leur performance.
+          </SubTitle>
+        </Container>
       </main>
+      <CTA />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "../button";
 import { Container } from "../container";
+import { SubTitle, Title } from "../title";
 
 const expertises = [
   {
@@ -27,46 +28,35 @@ const expertises = [
 
 export const Expertises = () => {
   return (
-    <section className="py-20">
-      <Container className="space-y-12">
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-3xl md:text-5xl font-semibold">
-            Des solutions conçues pour faire grandir votre entreprise.
-          </h2>
-          <p className="text-secondary-text text-lg leading-relaxed">
-            De la gestion IT à la cybersécurité, du cloud à la transformation
-            digitale, Strivehawk vous aide à évoluer sereinement, avec des
-            solutions sur mesure et humaines.
-          </p>
-        </div>
+    <Container className="py-16">
+      <div className="space-y-6 text-center max-w-3xl mx-auto">
+        <Title>Des solutions conçues pour faire grandir votre entreprise.</Title>
+        <SubTitle>
+          De la gestion IT à la cybersécurité, du cloud à la transformation digitale, Strivehawk vous aide à évoluer sereinement, avec des solutions sur mesure et humaines.
+        </SubTitle>
+      </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {expertises.map((expertise) => (
-            <div
-              key={expertise.title}
-              className="flex flex-col justify-between rounded-2xl border border-transparent-border bg-black/40 p-8 shadow-lg shadow-emerald-500/10"
-            >
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-offWhite">
-                  {expertise.title}
-                </h3>
-                <p className="text-secondary-text leading-relaxed">
-                  {expertise.description}
-                </p>
-              </div>
-
-              <Button
-                variant="tertiary"
-                size="small"
-                className="mt-6 self-start"
-                asChild
-              >
-                <Link href="/services">Découvrir le service</Link>
-              </Button>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {expertises.map((expertise) => (
+          <div
+            key={expertise.title}
+            className="border border-transparent-border rounded-2xl bg-tertiary-color/30 p-6 flex flex-col justify-between"
+          >
+            <div className="space-y-3">
+              <h3 className="text-lg font-medium">{expertise.title}</h3>
+              <p className="text-sm text-secondary-text">{expertise.description}</p>
             </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+            <Button
+              variant="secondary"
+              size="small"
+              className="mt-6 w-fit"
+              asChild
+            >
+              <Link href="/services">Découvrir le service</Link>
+            </Button>
+          </div>
+        ))}
+      </div>
+    </Container>
   );
 };

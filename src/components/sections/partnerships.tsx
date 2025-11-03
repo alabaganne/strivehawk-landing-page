@@ -1,29 +1,29 @@
 import { icons } from "@/utils/constant";
 import { Container } from "../container";
+import { SubTitle, Title } from "../title";
 
 export const Partnerships = () => {
   return (
-    <section id="partenaires" className="py-20 border-t border-transparent-border bg-background/60">
-      <Container className="space-y-8">
-        <div className="max-w-4xl space-y-4">
-          <h2 className="text-3xl md:text-5xl font-semibold">
-            En tant que filiale de Strivehawk US, nous nous appuyons sur ses
-            partenaires internationaux pour offrir des solutions robustes aux
-            entreprises africaines.
-          </h2>
-        </div>
+    <Container className="py-16" id="partenariats">
+      <div className="space-y-6 text-center max-w-4xl mx-auto">
+        <Title>
+          En tant que filiale de Strivehawk US, nous nous appuyons sur ses partenaires internationaux pour offrir des solutions robustes aux entreprises africaines.
+        </Title>
+        <SubTitle>
+          Nous collaborons avec un réseau mondial de fournisseurs technologiques pour garantir des services fiables, sécurisés et performants à chaque étape de vos projets.
+        </SubTitle>
+      </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {icons.map((icon) => (
-            <div
-              key={icon.id}
-              className="flex items-center justify-center rounded-2xl border border-transparent-border bg-black/40 p-6"
-            >
-              <icon.component className="h-10 w-auto" />
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12 items-center">
+        {icons.slice(0, 6).map((icon) => (
+          <div
+            key={icon.id}
+            className="flex items-center justify-center border border-transparent-border rounded-xl p-6 bg-tertiary-color/30"
+          >
+            <icon.component className="w-full h-auto text-secondary-text" />
+          </div>
+        ))}
+      </div>
+    </Container>
   );
 };
