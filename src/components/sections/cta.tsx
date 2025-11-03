@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Check } from "lucide-react";
 import { Container } from "../container";
 import { Title } from "../title";
@@ -16,17 +15,27 @@ export function CTA() {
         </div>
 
         <div className="space-x-2 mt-5 mb-18 flex justify-center">
-          <Button size="medium" className="hidden md:block" asChild>
-            <Link href="/contact">Commencer maintenant</Link>
+          <Button size="medium" className="hidden md:block" href="/contact">
+            Commencer maintenant
           </Button>
-          <Button size="medium" className="hidden md:block" variant="secondary" asChild>
-            <Link href="/services">Découvrir nos services</Link>
+          <Button
+            size="medium"
+            className="hidden md:block"
+            variant="secondary"
+            href="/services"
+          >
+            Découvrir nos services
           </Button>
-          <Button size="small" className="md:hidden" asChild>
-            <Link href="/contact">Commencer maintenant</Link>
+          <Button size="small" className="md:hidden" href="/contact">
+            Commencer maintenant
           </Button>
-          <Button size="small" className="md:hidden" variant="secondary" asChild>
-            <Link href="/services">Découvrir nos services</Link>
+          <Button
+            size="small"
+            className="md:hidden"
+            variant="secondary"
+            href="/services"
+          >
+            Découvrir nos services
           </Button>
         </div>
       </Container>

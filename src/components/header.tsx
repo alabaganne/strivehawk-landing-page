@@ -222,10 +222,12 @@ export const Header = () => {
                     ))}
 
                     <div className="flex flex-col px-5 space-y-2">
-                      <Button size="small" asChild>
-                        <Link href="/contact" onClick={() => setIsOpen(false)}>
-                          Nous contacter
-                        </Link>
+                      <Button
+                        size="small"
+                        href="/contact"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Nous contacter
                       </Button>
                     </div>
                   </motion.div>
@@ -235,11 +237,11 @@ export const Header = () => {
           </div>
         </div>
         <div className="lg:flex items-center gap-x-3 hidden w-full lg:justify-end">
-          <Button variant="secondary" size="small" asChild>
-            <Link href="/services">Découvrir nos services</Link>
+          <Button variant="secondary" size="small" href="/services">
+            Découvrir nos services
           </Button>
-          <Button size="small" asChild>
-            <Link href="/contact">Commencer maintenant</Link>
+          <Button size="small" href="/contact">
+            Commencer maintenant
           </Button>
         </div>
       </Container>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "../button";
 import { Container } from "../container";
 import { SubTitle, Title } from "../title";
@@ -50,9 +49,9 @@ export const Expertises = () => {
               variant="secondary"
               size="small"
               className="mt-6 w-fit"
-              asChild
+              href="/services"
             >
-              <Link href="/services">Découvrir le service</Link>
+              Découvrir le service
             </Button>
           </div>
         ))}

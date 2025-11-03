@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "../button";
 import { Container } from "../container";
 import { SubTitle, Title } from "../title";
@@ -26,11 +25,11 @@ export const CustomerStories = () => {
         </div>
 
         <div className="space-x-3 mt-5 md:mt-0 flex item-center justify-center">
-          <Button size="small" asChild>
-            <Link href="/services">Voir nos services</Link>
+          <Button size="small" href="/services">
+            Voir nos services
           </Button>
-          <Button size="small" variant="secondary" asChild>
-            <Link href="/contact">Parler à un expert</Link>
+          <Button size="small" variant="secondary" href="/contact">
+            Parler à un expert
           </Button>
         </div>
       </div>

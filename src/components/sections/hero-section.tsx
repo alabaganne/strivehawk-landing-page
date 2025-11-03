@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button, Highlight } from "../button";
 import { Container } from "../container";
 import { Hero, HerosubTitle, HeroTitle } from "../home-pageHero";
@@ -34,23 +33,28 @@ export const HeroSection = () => {
           </HerosubTitle>
 
           <div className="flex items-center justify-center space-x-2 mt-5 mb-18">
-            <Button size="medium" className="hidden md:block" asChild>
-              <Link href="/services">Découvrir nos services</Link>
+            <Button size="medium" className="hidden md:block" href="/services">
+              Découvrir nos services
             </Button>
             <Button
               size="medium"
               variant="secondary"
               className="hidden md:block"
-              asChild
+              href="/contact"
             >
-              <Link href="/contact">Démarrer votre projet</Link>
+              Démarrer votre projet
             </Button>
 
-            <Button size="small" className="md:hidden" asChild>
-              <Link href="/services">Découvrir nos services</Link>
+            <Button size="small" className="md:hidden" href="/services">
+              Découvrir nos services
             </Button>
-            <Button size="small" variant="secondary" className="md:hidden" asChild>
-              <Link href="/contact">Démarrer votre projet</Link>
+            <Button
+              size="small"
+              variant="secondary"
+              className="md:hidden"
+              href="/contact"
+            >
+              Démarrer votre projet
             </Button>
           </div>
 

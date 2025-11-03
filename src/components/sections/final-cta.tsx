@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "../button";
 import { Container } from "../container";
 
@@ -14,8 +13,8 @@ export const FinalCTA = () => {
           adaptée à votre réalité.
         </p>
         <div className="mt-8 flex justify-center">
-          <Button size="medium" asChild>
-            <Link href="/contact">Commencer maintenant</Link>
+          <Button size="medium" href="/contact">
+            Commencer maintenant
           </Button>
         </div>
       </Container>
