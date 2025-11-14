@@ -14,15 +14,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <HeroSection />
-      <WhyStrivehawk />
-      <Expertises />
-      <Partnerships />
-      <CustomerStories />
-      <StartBuilding />
-      <Frameworks />
-      <Testimonial />
-      <CTA />
+      <main className="pt-32">
+        <HeroSection />
+        <WhyStrivehawk />
+        <Expertises />
+        <Partnerships />
+        <CustomerStories />
+        <StartBuilding />
+        <Frameworks />
+        <Testimonial />
+        <CTA />
+      </main>
       <Footer />
     </>
   );

@@ -8,8 +8,8 @@ import { icons } from "@/utils/constant";
 export const HeroSection = () => {
   return (
     <div>
-      <Container className="py-[12rem]">
-        <Hero className="pt-[2rem]">
+      <Container className="py-16">
+        <Hero className="pt-8">
           <Button
             variant="quaternary"
             size="cta"

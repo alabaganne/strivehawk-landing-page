@@ -24,7 +24,7 @@ export default function ContactPage() {
                 <span>Nom complet</span>
                 <input
                   type="text"
-                  className="bg-transparent border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green"
+                  className="bg-tertiary-color border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green placeholder:text-green/60"
                   placeholder="Votre nom"
                 />
               </label>
@@ -32,7 +32,7 @@ export default function ContactPage() {
                 <span>Email</span>
                 <input
                   type="email"
-                  className="bg-transparent border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green"
+                  className="bg-tertiary-color border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green placeholder:text-green/60"
                   placeholder="vous@entreprise.com"
                 />
               </label>
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 <span>Téléphone</span>
                 <input
                   type="tel"
-                  className="bg-transparent border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green"
+                  className="bg-tertiary-color border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green placeholder:text-green/60"
                   placeholder="+228 00 00 00 00"
                 />
               </label>
@@ -51,8 +51,8 @@ export default function ContactPage() {
                 <span>Entreprise</span>
                 <input
                   type="text"
-                  className="bg-transparent border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green"
-                  placeholder="Nom de l’entreprise"
+                  className="bg-tertiary-color border border-transparent-border rounded-lg px-4 py-3 focus:outline-none focus:border-green placeholder:text-green/60"
+                  placeholder="Nom de l'entreprise"
                 />
               </label>
             </div>
@@ -60,7 +60,7 @@ export default function ContactPage() {
             <label className="flex flex-col text-left text-sm space-y-2">
               <span>Message</span>
               <textarea
-                className="bg-transparent border border-transparent-border rounded-lg px-4 py-3 h-40 focus:outline-none focus:border-green"
+                className="bg-tertiary-color border border-transparent-border rounded-lg px-4 py-3 h-40 focus:outline-none focus:border-green placeholder:text-green/60"
                 placeholder="Décrivez vos besoins..."
               />
             </label>
