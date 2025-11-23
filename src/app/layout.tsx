@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Strivehawk Afrique",
-  description:
-    "Strivehawk accompagne les entreprises d’Afrique de l’Ouest avec des solutions IT, cloud et cybersécurité centrées sur l’humain.",
+  title: "Strivehawk | Services IT Premium",
+  description: "Développement Web Expert, Montage Vidéo et Solutions IA.",
 };
 
 export default function RootLayout({
@@ -25,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-brand selection:text-secondary-color`}
-      >
+      <body className={jetbrainsMono.variable}>
         {children}
       </body>
     </html>

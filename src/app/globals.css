@@ -2,50 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --navigation-height: 6.5rem;
-  }
-
-  html {
-    @apply bg-background font-sans text-offWhite;
-    font-size: 62.5%;
-  }
+:root {
+  --background: #030303;
+  --foreground: #ededed;
 }
 
-@layer utilities {
-  .mask-gradient-opacity {
-    -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 100%, rgb(0, 0, 0) 100%);
-    mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, rgb(0, 0, 0) 100%);
-    opacity: 1;
-  }
-
-  .mask-image-custom {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      black 128px,
-      black calc(100% - 200px),
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      black 128px,
-      black calc(100% - 200px),
-      transparent 100%
-    );
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-jetbrains-mono), monospace;
 }
 
-.no-scrollbar {
-  overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Custom utilities that might be useful */
+.glow-text {
+  text-shadow: 0 0 20px rgba(62, 207, 142, 0.5);
 }
