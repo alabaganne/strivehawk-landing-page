@@ -1,7 +1,6 @@
 'use client';
 
 import FadeIn from './FadeIn';
-import { motion } from 'framer-motion';
 
 const process = [
   {
@@ -28,12 +27,12 @@ const process = [
 
 export default function Process() {
   return (
-    <section className="py-32 px-6 bg-[#050505]">
+    <section className="py-32 px-6 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="mb-20">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-2 block">Notre Processus</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Comment nous travaillons</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Comment nous travaillons</h2>
           </div>
         </FadeIn>
 
@@ -42,10 +41,10 @@ export default function Process() {
             <FadeIn key={index} delay={index * 0.1}>
               <div className="group relative">
                 <div className="absolute -inset-px bg-gradient-to-b from-primary/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 h-full hover:border-white/10 transition-colors">
-                  <div className="text-6xl font-bold text-white/20 group-hover:text-white/20 mb-4 transition-colors">{step.number}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
+                <div className="relative bg-white border border-black/5 rounded-2xl p-8 h-full hover:border-black/10 transition-colors shadow-sm">
+                  <div className="text-6xl font-bold text-black/10 group-hover:text-black/15 mb-4 transition-colors">{step.number}</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             </FadeIn>

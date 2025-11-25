@@ -9,13 +9,13 @@ export default function Navbar() {
                 </Link>
 
                 <div className="hidden md:flex gap-8">
-                    <Link href="/#services" className="text-gray-400 text-sm hover:text-foreground transition-colors">
+                    <Link href="/#services" className="text-gray-500 text-sm hover:text-foreground transition-colors">
                         Services
                     </Link>
-                    <Link href="/#portfolio" className="text-gray-400 text-sm hover:text-foreground transition-colors">
+                    <Link href="/#portfolio" className="text-gray-500 text-sm hover:text-foreground transition-colors">
                         Portfolio
                     </Link>
-                    <Link href="/#faq" className="text-gray-400 text-sm hover:text-foreground transition-colors">
+                    <Link href="/#faq" className="text-gray-500 text-sm hover:text-foreground transition-colors">
                         FAQ
                     </Link>
                 </div>

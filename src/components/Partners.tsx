@@ -31,7 +31,7 @@ const icons = [
 
 export default function Partners() {
     return (
-        <section className="py-10 border-b border-white/5 bg-[#030303]">
+        <section className="py-10 border-b border-black/5 bg-[#fafafa]">
             <div className="max-w-7xl mx-auto px-6">
                 <p className="text-center text-sm text-gray-500 mb-8 font-medium uppercase tracking-widest">
                     Ils nous font confiance

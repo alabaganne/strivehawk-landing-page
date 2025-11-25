@@ -36,7 +36,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="faq" className="py-32 px-6 bg-[#030303]">
+        <section id="faq" className="py-32 px-6 bg-[#fafafa]">
             <div className="max-w-3xl mx-auto">
                 <FadeIn>
                     <div className="space-y-4">
@@ -44,15 +44,15 @@ export default function FAQ() {
                             <div
                                 key={index}
                                 className={cn(
-                                    "group bg-[#080808] border rounded-2xl overflow-hidden transition-all duration-300",
-                                    openIndex === index ? "border-white/10 bg-[#0a0a0a]" : "border-white/5 hover:border-white/10"
+                                    "group bg-white border rounded-2xl overflow-hidden transition-all duration-300 shadow-sm",
+                                    openIndex === index ? "border-black/10 bg-white" : "border-black/5 hover:border-black/10"
                                 )}
                             >
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                     className="w-full flex items-center justify-between p-6 md:p-8 text-left"
                                 >
-                                    <span className="text-lg md:text-xl font-medium text-white pr-8">
+                                    <span className="text-lg md:text-xl font-medium text-foreground pr-8">
                                         {faq.question}
                                     </span>
                                     <div className="relative flex items-center justify-center w-6 h-6 shrink-0">
@@ -64,7 +64,7 @@ export default function FAQ() {
                                         <motion.span
                                             animate={{ rotate: openIndex === index ? 45 : 0 }}
                                             transition={{ duration: 0.2 }}
-                                            className="text-white/50 group-hover:text-white transition-colors"
+                                            className="text-black/50 group-hover:text-foreground transition-colors"
                                         >
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                 <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -82,7 +82,7 @@ export default function FAQ() {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                         >
-                                            <div className="p-6 md:p-8 pt-0 text-gray-400 leading-relaxed text-base md:text-lg border-t border-white/5 mt-2">
+                                            <div className="p-6 md:p-8 pt-0 text-gray-600 leading-relaxed text-base md:text-lg border-t border-black/5 mt-2">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>

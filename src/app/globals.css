@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #030303;
-  --foreground: #ededed;
+  --background: #fafafa;
+  --foreground: #171717;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
 
 /* Custom utilities that might be useful */
 .glow-text {
-  text-shadow: 0 0 20px rgba(62, 207, 142, 0.5);
+  text-shadow: 0 0 20px rgba(22, 163, 74, 0.3);
 }
 
 @layer utilities {

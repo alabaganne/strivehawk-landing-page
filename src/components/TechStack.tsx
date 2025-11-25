@@ -15,19 +15,19 @@ const stack = [
 
 export default function TechStack() {
   return (
-    <section className="py-32 bg-[#030303] relative overflow-hidden">
+    <section className="py-32 bg-[#fafafa] relative overflow-hidden">
       {/* Decorative lines */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeIn>
           <div className="text-center mb-20">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">Stack Technique</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Les technologies que nous maîtrisons
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Nous utilisons les outils les plus performants et modernes pour garantir la qualité de vos projets.
             </p>
           </div>
@@ -38,13 +38,13 @@ export default function TechStack() {
             <FadeIn key={index} delay={index * 0.05}>
               <div className="group relative">
                 <div className="absolute -inset-px bg-gradient-to-b from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative p-8 rounded-2xl bg-[#0a0a0a] border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[180px]">
+                <div className="relative p-8 rounded-2xl bg-white border border-black/5 hover:border-black/10 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[180px] shadow-sm">
                   <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
                   </div>
                   <div className="text-center">
-                    <div className="font-bold text-white text-lg mb-1">{tech.name}</div>
-                    <div className="text-sm text-gray-400">{tech.category}</div>
+                    <div className="font-bold text-foreground text-lg mb-1">{tech.name}</div>
+                    <div className="text-sm text-gray-600">{tech.category}</div>
                   </div>
                 </div>
               </div>

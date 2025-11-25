@@ -9,18 +9,18 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: "#030303",
-                foreground: "#ededed",
+                background: "#fafafa",
+                foreground: "#171717",
                 primary: {
-                    DEFAULT: "#3ecf8e",
-                    hover: "#34b27b",
-                    glow: "rgba(62, 207, 142, 0.5)",
+                    DEFAULT: "#16a34a",
+                    hover: "#15803d",
+                    glow: "rgba(22, 163, 74, 0.3)",
                 },
                 surface: {
-                    DEFAULT: "#121212",
-                    hover: "#1a1a1a",
+                    DEFAULT: "#ffffff",
+                    hover: "#f5f5f5",
                 },
-                border: "#2a2a2a",
+                border: "#e5e5e5",
             },
             fontFamily: {
                 sans: ["var(--font-jetbrains-mono)", "monospace"],

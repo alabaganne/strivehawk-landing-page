@@ -11,16 +11,16 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-24 px-6 bg-[#030303] border-b border-white/5">
+    <section className="py-24 px-6 bg-[#fafafa] border-b border-black/5">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-6xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+                <div className="text-4xl md:text-6xl font-bold text-foreground mb-2 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-gray-500">
                   {stat.value}
                 </div>
-                <div className="text-sm md:text-base text-gray-400 font-medium">
+                <div className="text-sm md:text-base text-gray-600 font-medium">
                   {stat.label}
                 </div>
               </div>

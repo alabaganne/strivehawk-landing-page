@@ -41,31 +41,31 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 px-6 bg-[#050505]">
+    <section id="services" className="py-32 px-6 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="mb-20 max-w-3xl">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">Nos Services</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Des solutions complètes pour votre croissance</h2>
-            <p className="text-xl text-gray-400">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Des solutions complètes pour votre croissance</h2>
+            <p className="text-xl text-gray-600">
               Nous combinons expertise technique et vision créative pour transformer vos idées en succès mesurables.
             </p>
           </div>
         </FadeIn>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="group bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 transition-all duration-500 hover:border-primary/30 hover:-translate-y-2 h-full flex flex-col">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300 group-hover:scale-110">
+              <div className="group bg-white border border-black/5 rounded-2xl p-8 transition-all duration-500 hover:border-primary/30 hover:-translate-y-2 h-full flex flex-col shadow-sm">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
-                <p className="text-gray-400 leading-relaxed mb-6 flex-grow">{service.description}</p>
-                
-                <div className="space-y-2 pt-6 border-t border-white/5">
+                <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-6 flex-grow">{service.description}</p>
+
+                <div className="space-y-2 pt-6 border-t border-black/5">
                   {service.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
+                    <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {feature}
                     </div>
