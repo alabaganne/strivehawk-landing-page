@@ -1,6 +1,8 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
 
 function SunIcon({ className }: { className?: string }) {
@@ -51,6 +53,37 @@ function MoonIcon({ className }: { className?: string }) {
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
+    const pathname = usePathname();
+    const router = useRouter();
+
+    // Handle hash scrolling on page load (for cross-page navigation)
+    useEffect(() => {
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            // Small delay to ensure the page is fully rendered
+            setTimeout(() => {
+                const element = document.getElementById(hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    }, [pathname]);
+
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+        e.preventDefault();
+
+        if (pathname === '/') {
+            // Already on home page, just scroll to section
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // Navigate to home page with hash
+            router.push(`/#${sectionId}`);
+        }
+    };
 
     return (
         <nav className="fixed top-0 left-0 right-0 h-20 flex items-center justify-between px-8 bg-background/80 backdrop-blur-md border-b border-border z-50">
@@ -60,15 +93,27 @@ export default function Navbar() {
                 </Link>
 
                 <div className="hidden md:flex gap-8">
-                    <Link href="/#services" className="text-muted text-sm hover:text-foreground transition-colors">
+                    <a
+                        href="/#services"
+                        onClick={(e) => scrollToSection(e, 'services')}
+                        className="text-muted text-sm hover:text-foreground transition-colors cursor-pointer"
+                    >
                         Services
-                    </Link>
-                    <Link href="/#portfolio" className="text-muted text-sm hover:text-foreground transition-colors">
+                    </a>
+                    <a
+                        href="/#portfolio"
+                        onClick={(e) => scrollToSection(e, 'portfolio')}
+                        className="text-muted text-sm hover:text-foreground transition-colors cursor-pointer"
+                    >
                         Portfolio
-                    </Link>
-                    <Link href="/#faq" className="text-muted text-sm hover:text-foreground transition-colors">
+                    </a>
+                    <a
+                        href="/#faq"
+                        onClick={(e) => scrollToSection(e, 'faq')}
+                        className="text-muted text-sm hover:text-foreground transition-colors cursor-pointer"
+                    >
                         FAQ
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="flex items-center gap-3">
