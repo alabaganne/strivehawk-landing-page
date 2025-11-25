@@ -5,12 +5,12 @@ import FadeIn from './FadeIn';
 
 export default function CTA() {
     return (
-        <section className="py-32 px-4 md:px-6 bg-[#fafafa]">
+        <section className="py-32 px-4 md:px-6 bg-background">
             <div className="max-w-6xl mx-auto">
                 <FadeIn>
-                    <div className="relative bg-white border border-black/10 rounded-[3rem] p-12 md:p-32 text-center overflow-hidden isolate shadow-lg">
+                    <div className="relative bg-surface border border-border rounded-[3rem] p-12 md:p-32 text-center overflow-hidden isolate shadow-lg dark:shadow-none">
                         {/* Subtle Gradient Mesh */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(22,163,74,0.08)_0%,transparent_70%)] -z-10" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(77,170,221,0.08)_0%,transparent_70%)] -z-10" />
                         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent -z-10 opacity-50" />
 
                         <div className="relative z-10 flex flex-col items-center">
@@ -19,7 +19,7 @@ export default function CTA() {
                                 <span className="font-serif italic text-foreground/90">vers de nouveaux sommets ?</span>
                             </h2>
 
-                            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-16 leading-relaxed font-light">
+                            <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto mb-16 leading-relaxed font-light">
                                 Si vous souhaitez obtenir une croissance révolutionnaire grâce à un design web performant et des solutions IA, vous êtes au bon endroit.
                             </p>
 

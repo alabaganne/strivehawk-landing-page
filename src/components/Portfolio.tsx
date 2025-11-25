@@ -55,13 +55,13 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-32 px-6 bg-[#fafafa]">
+    <section id="portfolio" className="py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="mb-20">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">Portfolio</span>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Projets qui font la différence</h2>
-            <p className="text-xl text-gray-600 max-w-3xl">
+            <p className="text-xl text-muted max-w-3xl">
               Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs et dépasser leurs attentes.
             </p>
           </div>
@@ -70,7 +70,7 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="group relative h-[400px] rounded-2xl overflow-hidden border border-black/5 bg-white hover:border-primary/30 transition-all duration-500 shadow-sm">
+              <div className="group relative h-[400px] rounded-2xl overflow-hidden border border-border bg-surface hover:border-primary/30 transition-all duration-500 shadow-sm dark:shadow-none">
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-50 group-hover:opacity-70 transition-opacity duration-500`} />
 
                 <div className="absolute inset-0 p-8 flex flex-col justify-between">
@@ -83,7 +83,7 @@ export default function Portfolio() {
 
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <h3 className="text-2xl font-bold text-foreground mb-3">{project.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-muted leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {project.description}
                     </p>
                     <div className="inline-block px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-semibold">
