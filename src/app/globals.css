@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Account for fixed navbar height (h-20 = 80px) */
+}
+
 /* Light theme (default) */
 :root,
 .light {
