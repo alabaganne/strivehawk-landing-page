@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import LoadingScreen from "./LoadingScreen";
 
 type Theme = "light" | "dark";
 
@@ -22,6 +24,7 @@ export function useTheme() {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -51,14 +54,39 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  // Prevent flash of wrong theme
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  // Prevent flash of wrong theme - show loading screen background color
   if (!mounted) {
-    return null;
+    return (
+      <div className="fixed inset-0 bg-background" />
+    );
   }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <LoadingScreen key="loading" onLoadingComplete={handleLoadingComplete} />
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: isLoading ? 0 : 1,
+          y: isLoading ? 20 : 0
+        }}
+        transition={{
+          duration: 0.8,
+          ease: [0.21, 0.47, 0.32, 0.98],
+          delay: isLoading ? 0 : 0.2
+        }}
+      >
+        {children}
+      </motion.div>
     </ThemeContext.Provider>
   );
 }
