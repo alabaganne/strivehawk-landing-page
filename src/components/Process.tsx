@@ -27,7 +27,7 @@ const process = [
 
 export default function Process() {
   return (
-    <section className="py-32 px-6 bg-[#f5f5f5]">
+    <section className="py-32 px-6 bg-surface">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="mb-20">
@@ -41,10 +41,10 @@ export default function Process() {
             <FadeIn key={index} delay={index * 0.1}>
               <div className="group relative">
                 <div className="absolute -inset-px bg-gradient-to-b from-primary/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-white border border-black/5 rounded-2xl p-8 h-full hover:border-black/10 transition-colors shadow-sm">
-                  <div className="text-6xl font-bold text-black/10 group-hover:text-black/15 mb-4 transition-colors">{step.number}</div>
+                <div className="relative bg-background border border-border rounded-2xl p-8 h-full hover:border-primary/20 transition-colors shadow-sm dark:shadow-none">
+                  <div className="text-6xl font-bold text-foreground/10 group-hover:text-foreground/20 mb-4 transition-colors">{step.number}</div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  <p className="text-muted leading-relaxed">{step.description}</p>
                 </div>
               </div>
             </FadeIn>

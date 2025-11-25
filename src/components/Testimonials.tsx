@@ -25,7 +25,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-32 px-6 bg-[#f5f5f5]">
+    <section className="py-32 px-6 bg-surface">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center mb-20">
@@ -37,20 +37,20 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="bg-white border border-black/5 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col shadow-sm">
+              <div className="bg-background border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col shadow-sm dark:shadow-none">
                 <div className="flex-grow">
                   <div className="text-primary text-4xl mb-6">&quot;</div>
-                  <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                  <p className="text-muted leading-relaxed mb-8 text-lg">
                     {testimonial.quote}
                   </p>
                 </div>
-                <div className="flex items-center gap-4 pt-6 border-t border-black/5">
+                <div className="flex items-center gap-4 pt-6 border-t border-border">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center text-white font-bold">
                     {testimonial.avatar}
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    <div className="text-sm text-muted">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
