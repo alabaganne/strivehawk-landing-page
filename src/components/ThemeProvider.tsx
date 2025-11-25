@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import LoadingScreen from "./LoadingScreen";
 
 type Theme = "light" | "dark";
 
@@ -22,6 +24,7 @@ export function useTheme() {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -51,6 +54,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   // Prevent flash of wrong theme
   if (!mounted) {
     return null;
@@ -58,6 +65,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <LoadingScreen key="loading" onLoadingComplete={handleLoadingComplete} />
+        )}
+      </AnimatePresence>
       {children}
     </ThemeContext.Provider>
   );
