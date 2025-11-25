@@ -6,21 +6,23 @@ const config: Config = {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
+    darkMode: "class",
     theme: {
         extend: {
             colors: {
-                background: "#030303",
-                foreground: "#ededed",
+                background: "var(--background)",
+                foreground: "var(--foreground)",
                 primary: {
-                    DEFAULT: "#3ecf8e",
-                    hover: "#34b27b",
-                    glow: "rgba(62, 207, 142, 0.5)",
+                    DEFAULT: "var(--primary)",
+                    hover: "var(--primary-hover)",
+                    glow: "var(--primary-glow)",
                 },
                 surface: {
-                    DEFAULT: "#121212",
-                    hover: "#1a1a1a",
+                    DEFAULT: "var(--surface)",
+                    hover: "var(--surface-hover)",
                 },
-                border: "#2a2a2a",
+                border: "var(--border)",
+                muted: "var(--muted)",
             },
             fontFamily: {
                 sans: ["var(--font-jetbrains-mono)", "monospace"],

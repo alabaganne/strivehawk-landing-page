@@ -31,9 +31,9 @@ const icons = [
 
 export default function Partners() {
     return (
-        <section className="py-10 border-b border-white/5 bg-[#030303]">
+        <section className="py-10 border-b border-border bg-background">
             <div className="max-w-7xl mx-auto px-6">
-                <p className="text-center text-sm text-gray-500 mb-8 font-medium uppercase tracking-widest">
+                <p className="text-center text-sm text-muted mb-8 font-medium uppercase tracking-widest">
                     Ils nous font confiance
                 </p>
                 <Marquee className="flex items-center max-w-[70rem] mx-auto my-5 overflow-hidden mask-image-custom group">
@@ -43,7 +43,7 @@ export default function Partners() {
                                 key={icon.id}
                                 className="flex items-center mx-8 max-w-none"
                             >
-                                <icon.component className="w-auto h-auto" />
+                                <icon.component className="w-auto h-auto text-muted" />
                             </div>
                         ))}
                         {icons.map((icon) => (
@@ -51,7 +51,7 @@ export default function Partners() {
                                 key={`duplicate-${icon.id}`}
                                 className="flex items-center mx-8 max-w-none"
                             >
-                                <icon.component className="w-auto h-auto" />
+                                <icon.component className="w-auto h-auto text-muted" />
                             </div>
                         ))}
                     </div>
