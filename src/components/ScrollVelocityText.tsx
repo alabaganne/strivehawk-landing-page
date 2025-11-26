@@ -42,9 +42,9 @@ export default function ScrollVelocityText({
   const scrollVelocity = useMotionValue(0);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
-    stiffness: 400,
+    stiffness: 300,
   });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 2], {
     clamp: false,
   });
 
@@ -57,7 +57,7 @@ export default function ScrollVelocityText({
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const diff = currentScrollY - lastScrollY;
-      scrollVelocity.set(Math.abs(diff) * 10);
+      scrollVelocity.set(Math.abs(diff) * 3);
       directionFactor.current = diff > 0 ? 1 : -1;
       lastScrollY = currentScrollY;
     };
