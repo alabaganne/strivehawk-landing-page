@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import LenisProvider from "@/components/LenisProvider";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -23,7 +25,9 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <body className={jetbrainsMono.variable}>
         <ThemeProvider>
-          {children}
+          <LenisProvider>
+            {children}
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>

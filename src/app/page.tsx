@@ -5,7 +5,8 @@ import Stats from '@/components/Stats';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import TechStack from '@/components/TechStack';
-import Portfolio from '@/components/Portfolio';
+import HorizontalScrollPortfolio from '@/components/HorizontalScrollPortfolio';
+import ScrollShowcase from '@/components/ScrollShowcase';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -17,11 +18,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Partners />
+      <ScrollShowcase />
       <Stats />
       <Services />
       <Process />
       <TechStack />
-      <Portfolio />
+      <HorizontalScrollPortfolio />
       <Testimonials />
       <FAQ />
       <CTA />
