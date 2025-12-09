@@ -58,7 +58,6 @@ export default function Process() {
             ease: 'power3.out',
           });
 
-          // Animate the marker separately
           const marker = item.querySelector('.timeline-marker');
           if (marker) {
             gsap.from(marker, {
@@ -83,9 +82,8 @@ export default function Process() {
 
   return (
     <section ref={sectionRef} className="py-32 px-6 bg-surface relative overflow-hidden">
-      {/* Unique background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-purple-500/5 to-transparent blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl translate-y-1/2 -translate-x-1/2" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-20">
@@ -98,9 +96,8 @@ export default function Process() {
         </div>
 
         <div ref={timelineRef} className="relative">
-          {/* Timeline line with gradient */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary via-purple-500 to-primary opacity-30"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/50 to-primary opacity-20"></div>
             <div className="absolute inset-0 bg-border"></div>
           </div>
 
@@ -111,15 +108,13 @@ export default function Process() {
               return (
                 <div
                   key={index}
-                  className="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-8"
+                  className="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-8 cursor-pointer"
                 >
-                  {/* Timeline marker - properly centered */}
                   <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full glass border-2 border-primary items-center justify-center z-10 bg-surface shadow-lg">
                     <span className="text-2xl">{step.icon}</span>
                     <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-75"></div>
                   </div>
 
-                  {/* Content with better alignment */}
                   <div
                     className={`w-full md:w-[calc(50%-3.5rem)] glass rounded-2xl p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 ${
                       isEven ? 'md:mr-auto md:pr-4' : 'md:ml-auto md:pl-4'
@@ -139,7 +134,6 @@ export default function Process() {
                       </div>
                     </div>
                     
-                    {/* Unique progress indicator */}
                     <div className="mt-4 pt-4 border-t border-border">
                       <div className="flex items-center gap-2 text-xs text-muted">
                         <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>

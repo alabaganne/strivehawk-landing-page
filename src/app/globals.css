@@ -23,8 +23,8 @@ html {
   --primary: #3b82f6;
   --primary-hover: #60a5fa;
   --primary-glow: rgba(59, 130, 246, 0.3);
-  --accent-secondary: #8b5cf6;
-  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --accent-secondary: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
   
   --surface: #121212;
   --surface-hover: #1a1a1a;
@@ -75,8 +75,8 @@ html {
   --primary: #3b82f6;
   --primary-hover: #2563eb;
   --primary-glow: rgba(59, 130, 246, 0.2);
-  --accent-secondary: #8b5cf6;
-  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --accent-secondary: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
   
   --surface: #ffffff;
   --surface-hover: #f5f5f5;
@@ -257,14 +257,12 @@ body {
   transform-style: preserve-3d;
 }
 
-/* Enhanced gradient text with better rendering */
+/* Professional gradient text - blue only */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%);
-  background-size: 200% 200%;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 3s ease infinite;
 }
 
 /* Performance optimization */

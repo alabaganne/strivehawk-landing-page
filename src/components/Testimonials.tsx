@@ -37,7 +37,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="bg-background border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col shadow-sm dark:shadow-none">
+              <div className="bg-background border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col shadow-sm dark:shadow-none cursor-pointer">
                 <div className="flex-grow">
                   <div className="text-primary text-4xl mb-6">&quot;</div>
                   <p className="text-muted leading-relaxed mb-8 text-lg">

@@ -16,7 +16,6 @@ const stack = [
 export default function TechStack() {
   return (
     <section className="py-32 bg-background relative overflow-hidden">
-      {/* Decorative lines */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
@@ -36,7 +35,7 @@ export default function TechStack() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stack.map((tech, index) => (
             <FadeIn key={index} delay={index * 0.05}>
-              <div className="group relative">
+              <div className="group relative cursor-pointer">
                 <div className="absolute -inset-px bg-gradient-to-b from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative p-8 rounded-2xl bg-surface border border-border hover:border-primary/20 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[180px] shadow-sm dark:shadow-none">
                   <div className="text-5xl group-hover:scale-110 transition-transform duration-300">

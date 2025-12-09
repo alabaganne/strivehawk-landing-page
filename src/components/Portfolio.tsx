@@ -33,7 +33,7 @@ const projects = [
     tag: "Web • E-commerce",
     description: "Marketplace moderne avec système de recommandation IA et paiement sécurisé",
     image: "🛒",
-    color: "from-purple-500/30 to-pink-500/30",
+    color: "from-blue-500/30 to-cyan-500/30",
     metrics: "€2M+ de ventes",
     icon: "📈",
   },
@@ -162,7 +162,7 @@ export default function Portfolio() {
               }}
             >
               {/* Unique hover glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-purple-500/0 to-primary/0 group-hover:from-primary/20 group-hover:via-purple-500/10 group-hover:to-primary/20 transition-all duration-500 rounded-2xl opacity-0 group-hover:opacity-100 -z-10 blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/15 group-hover:to-primary/8 transition-all duration-500 rounded-2xl opacity-0 group-hover:opacity-100 -z-10 blur-xl"></div>
               
               <div className="relative aspect-video overflow-hidden rounded-t-2xl">
                 <div
