@@ -31,17 +31,17 @@ const icons = [
 
 export default function Partners() {
     return (
-        <section className="py-10 border-b border-border bg-background">
+        <section className="py-16 border-b border-border bg-background">
             <div className="max-w-7xl mx-auto px-6">
-                <p className="text-center text-sm text-muted mb-8 font-medium uppercase tracking-widest">
-                    Ils nous font confiance
+                <p className="text-center text-sm text-muted mb-12 font-medium uppercase tracking-widest">
+                    Trusted by 50+ companies
                 </p>
-                <Marquee className="flex items-center max-w-[70rem] mx-auto my-5 overflow-hidden mask-image-custom group">
+                <Marquee className="flex items-center max-w-[70rem] mx-auto overflow-hidden mask-image-custom group">
                     <div className="flex animate-infinite-scroll [--animation-delay:50s] group-hover:[animation-play-state:paused]">
                         {icons.map((icon) => (
                             <div
                                 key={icon.id}
-                                className="flex items-center mx-8 max-w-none"
+                                className="flex items-center mx-8 max-w-none opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                             >
                                 <icon.component className="w-auto h-auto text-muted" />
                             </div>
@@ -49,7 +49,7 @@ export default function Partners() {
                         {icons.map((icon) => (
                             <div
                                 key={`duplicate-${icon.id}`}
-                                className="flex items-center mx-8 max-w-none"
+                                className="flex items-center mx-8 max-w-none opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                             >
                                 <icon.component className="w-auto h-auto text-muted" />
                             </div>

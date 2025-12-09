@@ -56,11 +56,11 @@ export default function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="group bg-background border border-border rounded-2xl p-8 transition-all duration-500 hover:border-primary/30 hover:-translate-y-2 h-full flex flex-col shadow-sm dark:shadow-none">
+              <div className="group glass rounded-2xl p-8 transition-all duration-500 hover:border-primary/30 hover:-translate-y-2 h-full flex flex-col card-hover">
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
                 <p className="text-muted leading-relaxed mb-6 flex-grow">{service.description}</p>
 
                 <div className="space-y-2 pt-6 border-t border-border">

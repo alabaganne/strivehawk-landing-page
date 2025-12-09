@@ -1,54 +1,106 @@
 'use client';
 
-import FadeIn from './FadeIn';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const process = [
   {
-    number: "01",
-    title: "Découverte",
-    description: "Nous analysons vos besoins, votre marché et vos objectifs pour définir une stratégie sur mesure."
+    number: '01',
+    title: 'Analyse & Diagnostic',
+    description: 'Audit complet de votre infrastructure actuelle, identification des opportunités et définition de la stratégie.',
   },
   {
-    number: "02",
-    title: "Conception",
-    description: "Notre équipe crée des maquettes et prototypes interactifs pour valider la direction créative."
+    number: '02',
+    title: 'Conception & Planification',
+    description: 'Notre équipe crée des maquettes et prototypes interactifs pour valider la direction créative et technique.',
   },
   {
-    number: "03",
-    title: "Développement",
-    description: "Nous construisons votre solution avec les technologies les plus performantes et modernes."
+    number: '03',
+    title: 'Développement & Implémentation',
+    description: 'Nous construisons votre solution avec les technologies les plus performantes et modernes, en respectant les délais.',
   },
   {
-    number: "04",
-    title: "Lancement & Suivi",
-    description: "Mise en ligne optimisée et accompagnement continu pour garantir votre succès."
-  }
+    number: '04',
+    title: 'Lancement & Suivi',
+    description: 'Mise en ligne optimisée et accompagnement continu pour garantir votre succès et votre croissance.',
+  },
 ];
 
 export default function Process() {
-  return (
-    <section className="py-32 px-6 bg-surface">
-      <div className="max-w-7xl mx-auto">
-        <FadeIn>
-          <div className="mb-20">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-2 block">Notre Processus</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Comment nous travaillons</h2>
-          </div>
-        </FadeIn>
+  const sectionRef = useRef<HTMLElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {process.map((step, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
-              <div className="group relative">
-                <div className="absolute -inset-px bg-gradient-to-b from-primary/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-background border border-border rounded-2xl p-8 h-full hover:border-primary/20 transition-colors shadow-sm dark:shadow-none">
-                  <div className="text-6xl font-bold text-foreground/10 group-hover:text-foreground/20 mb-4 transition-colors">{step.number}</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">{step.title}</h3>
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = timelineRef.current?.querySelectorAll('.timeline-item');
+      if (items) {
+        items.forEach((item, index) => {
+          gsap.from(item, {
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            },
+            opacity: 0,
+            x: index % 2 === 0 ? -50 : 50,
+            duration: 0.8,
+            delay: index * 0.15,
+            ease: 'power3.out',
+          });
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="py-32 px-6 bg-surface">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-20">
+          <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-2 block">
+            Notre Processus
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground">
+            <span className="gradient-text">Comment</span> ça marche
+          </h2>
+        </div>
+
+        <div ref={timelineRef} className="relative">
+          {/* Timeline line */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+
+          <div className="space-y-12 md:space-y-24">
+            {process.map((step, index) => (
+              <div
+                key={index}
+                className="timeline-item relative flex flex-col md:flex-row items-center gap-8"
+              >
+                {/* Timeline marker */}
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full glass border-2 border-primary flex items-center justify-center z-10">
+                  <span className="text-primary font-bold">{index + 1}</span>
+                </div>
+
+                {/* Content */}
+                <div
+                  className={`w-full md:w-1/2 glass rounded-2xl p-8 ${
+                    index % 2 === 0 ? 'md:pr-16' : 'md:ml-auto md:pl-16'
+                  }`}
+                >
+                  <div className="text-6xl font-bold text-foreground/10 mb-4">
+                    {step.number}
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    {step.title}
+                  </h3>
                   <p className="text-muted leading-relaxed">{step.description}</p>
                 </div>
               </div>
-            </FadeIn>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

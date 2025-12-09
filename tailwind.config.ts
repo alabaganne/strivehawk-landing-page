@@ -25,8 +25,9 @@ const config: Config = {
                 muted: "var(--muted)",
             },
             fontFamily: {
-                sans: ["var(--font-jetbrains-mono)", "monospace"],
+                sans: ["var(--font-inter)", "system-ui", "sans-serif"],
                 mono: ["var(--font-jetbrains-mono)", "monospace"],
+                display: ["var(--font-inter)", "system-ui", "sans-serif"],
             },
             animation: {
                 "infinite-scroll": "infinite-scroll var(--animation-delay) linear infinite forwards",
@@ -36,6 +37,13 @@ const config: Config = {
                     from: { transform: "translateX(0)" },
                     to: { transform: "translateX(-50%)" },
                 },
+            },
+            backgroundImage: {
+                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+                "grid-pattern": "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            },
+            backgroundSize: {
+                "grid-pattern": "50px 50px",
             },
         },
     },
