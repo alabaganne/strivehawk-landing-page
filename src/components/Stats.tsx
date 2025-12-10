@@ -56,7 +56,7 @@ export default function Stats() {
           {stats.map((stat, index) => (
             <div 
               key={index} 
-              className="text-center glass rounded-2xl p-6 md:p-8 transition-all duration-300 hover:scale-105 hover:border-primary/50 group relative overflow-hidden cursor-pointer"
+              className="text-center glass rounded-2xl p-6 md:p-8 transition-all duration-300 hover:scale-105 hover:border-primary/50 group relative overflow-hidden cursor-pointer h-full min-h-[160px] md:min-h-[180px] flex flex-col justify-center"
             >
               {/* Unique glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-primary/5 transition-all duration-500 rounded-2xl"></div>
@@ -69,7 +69,7 @@ export default function Stats() {
                 >
                   0{stat.suffix}
                 </div>
-                <div className="text-sm md:text-base text-muted font-medium group-hover:text-foreground transition-colors">
+                <div className="text-sm md:text-base text-muted font-medium group-hover:text-foreground transition-colors line-clamp-2">
                   {stat.label}
                 </div>
               </div>

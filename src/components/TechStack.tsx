@@ -35,15 +35,15 @@ export default function TechStack() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stack.map((tech, index) => (
             <FadeIn key={index} delay={index * 0.05}>
-              <div className="group relative cursor-pointer">
+              <div className="group relative cursor-pointer h-full">
                 <div className="absolute -inset-px bg-gradient-to-b from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative p-8 rounded-2xl bg-surface border border-border hover:border-primary/20 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[180px] shadow-sm dark:shadow-none">
-                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                <div className="relative p-8 rounded-2xl bg-surface border border-border hover:border-primary/20 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[200px] md:min-h-[220px] shadow-sm dark:shadow-none">
+                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     {tech.icon}
                   </div>
-                  <div className="text-center">
-                    <div className="font-bold text-foreground text-lg mb-1">{tech.name}</div>
-                    <div className="text-sm text-muted">{tech.category}</div>
+                  <div className="text-center flex-shrink-0">
+                    <div className="font-bold text-foreground text-lg mb-1 line-clamp-1">{tech.name}</div>
+                    <div className="text-sm text-muted line-clamp-1">{tech.category}</div>
                   </div>
                 </div>
               </div>

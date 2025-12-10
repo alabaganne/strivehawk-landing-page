@@ -155,7 +155,7 @@ export default function Portfolio() {
           {filteredProjects.map((project, index) => (
             <article
               key={index}
-              className="project-card group glass rounded-2xl overflow-hidden cursor-pointer card-hover relative"
+              className="project-card group glass rounded-2xl overflow-hidden cursor-pointer card-hover relative h-full flex flex-col"
               data-category={project.category}
               style={{
                 animationDelay: `${index * 0.1}s`,
@@ -164,7 +164,7 @@ export default function Portfolio() {
               {/* Unique hover glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/15 group-hover:to-primary/8 transition-all duration-500 rounded-2xl opacity-0 group-hover:opacity-100 -z-10 blur-xl"></div>
               
-              <div className="relative aspect-video overflow-hidden rounded-t-2xl">
+              <div className="relative aspect-video overflow-hidden rounded-t-2xl flex-shrink-0">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-50 group-hover:opacity-80 transition-all duration-500`}
                 />
@@ -181,15 +181,15 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
-              <div className="p-6 relative">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <div className="p-6 relative flex flex-col flex-grow">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors flex-shrink-0">
                   {project.title}
                 </h3>
-                <p className="text-muted leading-relaxed mb-4 line-clamp-2 text-sm md:text-base">
+                <p className="text-muted leading-relaxed mb-4 line-clamp-2 text-sm md:text-base flex-grow">
                   {project.description}
                 </p>
 
-                <div className="flex items-center gap-2 px-4 py-2.5 bg-primary/10 border border-primary/30 rounded-lg group-hover:bg-primary/20 group-hover:border-primary/50 transition-all">
+                <div className="flex items-center gap-2 px-4 py-2.5 bg-primary/10 border border-primary/30 rounded-lg group-hover:bg-primary/20 group-hover:border-primary/50 transition-all flex-shrink-0">
                   <span className="text-lg transform group-hover:scale-110 transition-transform">
                     {project.icon}
                   </span>
