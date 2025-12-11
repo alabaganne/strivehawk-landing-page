@@ -81,7 +81,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 px-6 bg-surface relative overflow-hidden">
+    <section id="process" ref={sectionRef} className="py-32 px-6 bg-surface relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl translate-y-1/2 -translate-x-1/2" />
       

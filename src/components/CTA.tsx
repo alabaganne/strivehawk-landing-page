@@ -183,15 +183,15 @@ export default function CTA() {
                         <h2 className="cta-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-foreground mb-4 sm:mb-5 md:mb-6 lg:mb-8 tracking-tight leading-[1.1] px-2 sm:px-0">
                             Prêt à{' '}
                             <span className="gradient-text relative inline-block">
-                                transformer
+                                renforcer
                                 <span className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-40"></span>
                             </span>
-                            {' '}votre infrastructure ?
+                            {' '}vos performances et vos équipes ?
                         </h2>
 
                         {/* Description with mobile-optimized spacing */}
                         <p className="cta-description text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16 leading-relaxed font-light px-4 sm:px-6">
-                            Discutons de votre projet et découvrez comment nos solutions peuvent créer un impact mesurable pour votre entreprise.
+                            Discutons de votre projet et trouvons ensemble la solution la plus adaptée à votre réalité.
                         </p>
 
                         {/* Enhanced button with mobile-optimized sizing */}
@@ -211,7 +211,7 @@ export default function CTA() {
                             
                             {/* Button content */}
                             <span className="relative z-10 flex items-center gap-2 sm:gap-2.5 text-center">
-                                <span className="whitespace-nowrap">Discutons de votre projet</span>
+                                <span className="whitespace-nowrap">Commencer maintenant</span>
                                 <svg
                                     className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110"
                                     fill="none"

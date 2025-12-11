@@ -1,16 +1,66 @@
 'use client';
 
 import FadeIn from './FadeIn';
+import { 
+  SiNextdotjs, 
+  SiReact, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiNodedotjs, 
+  SiPython, 
+  SiTensorflow, 
+  SiAmazon 
+} from 'react-icons/si';
 
 const stack = [
-  { name: "Next.js", category: "Framework", icon: "⚡" },
-  { name: "React", category: "Library", icon: "⚛️" },
-  { name: "TypeScript", category: "Language", icon: "📘" },
-  { name: "Tailwind CSS", category: "Styling", icon: "🎨" },
-  { name: "Node.js", category: "Backend", icon: "🟢" },
-  { name: "Python", category: "AI/ML", icon: "🐍" },
-  { name: "TensorFlow", category: "AI/ML", icon: "🧠" },
-  { name: "AWS", category: "Cloud", icon: "☁️" },
+  { 
+    name: "Next.js", 
+    category: "Framework", 
+    icon: SiNextdotjs,
+    color: "text-black dark:text-white"
+  },
+  { 
+    name: "React", 
+    category: "Library", 
+    icon: SiReact,
+    color: "text-[#61DAFB]"
+  },
+  { 
+    name: "TypeScript", 
+    category: "Language", 
+    icon: SiTypescript,
+    color: "text-[#3178C6]"
+  },
+  { 
+    name: "Tailwind CSS", 
+    category: "Styling", 
+    icon: SiTailwindcss,
+    color: "text-[#06B6D4]"
+  },
+  { 
+    name: "Node.js", 
+    category: "Backend", 
+    icon: SiNodedotjs,
+    color: "text-[#339933]"
+  },
+  { 
+    name: "Python", 
+    category: "AI/ML", 
+    icon: SiPython,
+    color: "text-[#3776AB]"
+  },
+  { 
+    name: "TensorFlow", 
+    category: "AI/ML", 
+    icon: SiTensorflow,
+    color: "text-[#FF6F00]"
+  },
+  { 
+    name: "AWS", 
+    category: "Cloud", 
+    icon: SiAmazon,
+    color: "text-[#FF9900]"
+  },
 ];
 
 export default function TechStack() {
@@ -33,22 +83,25 @@ export default function TechStack() {
         </FadeIn>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stack.map((tech, index) => (
-            <FadeIn key={index} delay={index * 0.05}>
-              <div className="group relative cursor-pointer h-full">
-                <div className="absolute -inset-px bg-gradient-to-b from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative p-8 rounded-2xl bg-surface border border-border hover:border-primary/20 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[200px] md:min-h-[220px] shadow-sm dark:shadow-none">
-                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                    {tech.icon}
-                  </div>
-                  <div className="text-center flex-shrink-0">
-                    <div className="font-bold text-foreground text-lg mb-1 line-clamp-1">{tech.name}</div>
-                    <div className="text-sm text-muted line-clamp-1">{tech.category}</div>
+          {stack.map((tech, index) => {
+            const IconComponent = tech.icon;
+            return (
+              <FadeIn key={index} delay={index * 0.05}>
+                <div className="group relative cursor-pointer h-full">
+                  <div className="absolute -inset-px bg-gradient-to-b from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative p-8 rounded-2xl bg-surface border border-border hover:border-primary/20 transition-all duration-300 flex flex-col items-center justify-center gap-4 h-full min-h-[200px] md:min-h-[220px] shadow-sm dark:shadow-none">
+                    <div className={`${tech.color} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <IconComponent className="w-12 h-12 md:w-16 md:h-16" />
+                    </div>
+                    <div className="text-center flex-shrink-0">
+                      <div className="font-bold text-foreground text-lg mb-1 line-clamp-1">{tech.name}</div>
+                      <div className="text-sm text-muted line-clamp-1">{tech.category}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>

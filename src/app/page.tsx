@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Partners from '@/components/Partners';
 import Stats from '@/components/Stats';
 import Services from '@/components/Services';
+import WhyStrivehawk from '@/components/WhyStrivehawk';
 import Process from '@/components/Process';
 import TechStack from '@/components/TechStack';
 import Portfolio from '@/components/Portfolio';
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="bg-background min-h-screen">
       <Navbar />
       <Hero />
+      <WhyStrivehawk />
       <Partners />
       <Stats />
       <Services />

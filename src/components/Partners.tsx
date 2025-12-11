@@ -31,14 +31,18 @@ const icons = [
 
 export default function Partners() {
     return (
-        <section className="py-20 border-b border-border bg-background relative overflow-hidden">
-            {/* Unique background decoration */}
+        <section id="partners" className="py-20 border-b border-border bg-background relative overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.015]"></div>
             
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <p className="text-center text-sm text-muted mb-12 font-medium uppercase tracking-widest">
-                    Trusted by 50+ companies
-                </p>
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                        Nos Partenariats
+                    </h2>
+                    <p className="text-lg text-muted max-w-3xl mx-auto">
+                        En tant que filiale de Strivehawk US, nous nous appuyons sur ses partenaires internationaux pour offrir des solutions robustes aux entreprises africaines.
+                    </p>
+                </div>
                 <Marquee className="flex items-center max-w-[70rem] mx-auto overflow-hidden mask-image-custom group">
                     <div className="flex animate-infinite-scroll [--animation-delay:50s] group-hover:[animation-play-state:paused]">
                         {icons.map((icon) => (
