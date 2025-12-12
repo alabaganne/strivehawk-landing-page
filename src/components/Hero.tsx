@@ -8,13 +8,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const networkBadges = [
-  { label: 'Cloud', value: '99.9%', x: 0, y: 0 },      // Top-left
-  { label: 'Security', value: '100%', x: 100, y: 0 },  // Top-right
-  { label: 'Speed', value: '2.1s', x: 0, y: 100 },    // Bottom-left
-  { label: 'Uptime', value: '24/7', x: 100, y: 100 }, // Bottom-right
+  { label: 'Cloud', value: '99.9%', x: 0, y: 0 },       
+  { label: 'Security', value: '100%', x: 100, y: 0 },  
+  { label: 'Speed', value: '2.1s', x: 0, y: 100 },    
+  { label: 'Uptime', value: '24/7', x: 100, y: 100 }, 
 ];
 
-// Floating particles/elements
+
 const floatingElements = Array.from({ length: 12 }, (_, i) => ({
   id: i,
   size: Math.random() * 4 + 2,
@@ -34,7 +34,6 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title reveal with word-by-word animation
       if (titleRef.current) {
         const words = titleRef.current.querySelectorAll('.title-word');
         gsap.from(words, {
