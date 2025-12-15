@@ -308,7 +308,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-20">
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-xs md:text-sm font-medium text-foreground mb-10 mt-0 ml-20 w-fit backdrop-blur-xl hover:bg-foreground/10 transition-all cursor-default group border border-primary/20 shadow-lg">
+        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-xs md:text-sm font-medium text-foreground mb-10 mt-0 w-fit backdrop-blur-xl hover:bg-foreground/10 transition-all cursor-default group border border-primary/20 shadow-lg">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -318,25 +318,18 @@ export default function Hero() {
 
         <h1
           ref={titleRef}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-bold tracking-tight text-foreground mb-8 md:mb-10 leading-[1.05] max-w-5xl"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-bold tracking-tight text-foreground mb-8 md:mb-10 leading-[1.05] max-w-5xl uppercase"
         >
-          <span className="title-word block">Solutions IT</span>
-          <span className="title-word block">
-            Qui{' '}
-            <span className="gradient-text relative">
-              Créent
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary/40 blur-sm"></span>
-            </span>
-          </span>
-          <span className="title-word block">de l'Impact</span>
+          <span className="title-word block text-foreground/20">SOLUTIONS</span>
+          <span className="title-word block text-foreground/50">QUI</span>
+          <span className="title-word block gradient-text">IMPACTENT</span>
         </h1>
 
         <p
           ref={subtitleRef}
-          className="text-xl md:text-2xl lg:text-3xl text-muted max-w-3xl leading-relaxed font-light mb-12 md:mb-16"
+          className="text-xl md:text-2xl lg:text-3xl text-muted max-w-2xl leading-relaxed font-light mb-12 md:mb-16"
         >
-          Transformez votre infrastructure digitale avec des solutions
-          sur-mesure, sécurisées et évolutives qui génèrent des résultats mesurables.
+          Infrastructure digitale sur-mesure, sécurisée et évolutive.
         </p>
 
         <div
