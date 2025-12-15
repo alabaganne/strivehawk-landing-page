@@ -126,16 +126,6 @@ export default function WhyStrivehawk() {
           ))}
         </div>
 
-        {/* Bottom quote */}
-        <FadeIn delay={0.3}>
-          <div className="mt-20 text-center max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-muted italic leading-relaxed">
-              Chez Strivehawk, chaque solution commence par une écoute.
-              <br />
-              <span className="text-foreground font-semibold">Parce qu'avant les ordinateurs, il y a des personnes.</span>
-            </p>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

@@ -72,9 +72,8 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
               delay: 0.1,
             }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="text-primary">Strive</span>
-              <span className="text-foreground">hawk</span>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+              Strivehawk
             </h1>
           </motion.div>
         </div>

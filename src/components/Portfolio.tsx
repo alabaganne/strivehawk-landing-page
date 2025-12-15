@@ -207,7 +207,7 @@ export default function Portfolio() {
               className={`px-6 py-3 rounded-full font-semibold text-sm transition-all ${
                 activeFilter === category.id
                   ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                  : 'glass text-foreground hover:bg-foreground/10'
+                  : 'bg-surface border border-border text-foreground hover:border-primary/50 hover:bg-surface-hover'
               }`}
             >
               {category.label}
