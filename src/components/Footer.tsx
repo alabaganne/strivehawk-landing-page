@@ -19,12 +19,9 @@ export default function Footer() {
                                 Strivehawk Agency
                             </Link>
 
-                            <div className="space-y-4 max-w-md">
-                                <h3 className="text-xl font-medium text-foreground">Prêt ? Partez, Croissez !</h3>
-                                <p className="text-muted leading-relaxed">
-                                    Nous développons une formule gagnante combinée à des designs pilotés par les données pour augmenter votre taux de conversion et optimiser vos funnels.
-                                </p>
-                            </div>
+                            <p className="text-muted leading-relaxed max-w-md">
+                                Nous développons une formule gagnante combinée à des designs pilotés par les données pour augmenter votre taux de conversion et optimiser vos funnels.
+                            </p>
                         </div>
 
                         <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
