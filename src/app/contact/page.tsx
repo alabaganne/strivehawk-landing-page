@@ -132,11 +132,11 @@ export default function ContactPage() {
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
                             className="space-y-6"
                         >
-                            <div className="glass rounded-2xl p-8 md:p-10 backdrop-blur-xl border border-glass-border shadow-lg">
-                                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                            <div className="rounded-2xl p-8 md:p-10 bg-surface/50 border border-border/50">
+                                <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
                                     Informations de contact
                                 </h2>
-                                <div className="space-y-4">
+                                <div className="space-y-3">
                                     {contactMethods.map((method, index) => (
                                         <motion.a
                                             key={index}
@@ -144,20 +144,20 @@ export default function ContactPage() {
                                             initial={{ opacity: 0, x: -20 }}
                                             animate={contactInView ? { opacity: 1, x: 0 } : {}}
                                             transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                                            className="contact-card group flex items-center gap-4 p-5 rounded-xl bg-surface/60 hover:bg-surface/80 border-2 border-border/70 hover:border-primary/50 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+                                            className="group flex items-center gap-4 p-4 rounded-xl hover:bg-surface/80 border border-transparent hover:border-border/50 transition-all duration-300 cursor-pointer"
                                         >
-                                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110 flex-shrink-0 shadow-md border border-primary/30">
+                                            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 flex-shrink-0">
                                                 {method.icon}
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <div className="text-xs md:text-sm font-semibold text-muted mb-1 uppercase tracking-wider group-hover:text-foreground/80 transition-colors">
+                                                <div className="text-xs text-muted mb-0.5 uppercase tracking-wider">
                                                     {method.label}
                                                 </div>
-                                                <div className="text-sm md:text-base lg:text-lg font-bold text-foreground group-hover:text-primary transition-colors break-words">
+                                                <div className="text-sm md:text-base text-foreground group-hover:text-primary transition-colors break-words">
                                                     {method.value}
                                                 </div>
                                             </div>
-                                            <svg className="w-4 h-4 md:w-5 md:h-5 text-muted/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg className="w-4 h-4 text-muted/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                             </svg>
                                         </motion.a>
@@ -169,24 +169,24 @@ export default function ContactPage() {
                                 initial={{ opacity: 0, y: 25 }}
                                 animate={contactInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.8, delay: 0.5 }}
-                                className="office-card glass rounded-2xl p-8 md:p-10 backdrop-blur-xl border border-glass-border shadow-lg"
+                                className="rounded-2xl p-8 md:p-10 bg-surface/50 border border-border/50"
                             >
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                                    <h3 className="text-lg md:text-xl font-semibold text-foreground">
                                         Notre bureau
                                     </h3>
                                 </div>
-                                <div className="space-y-2">
-                                    <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
+                                <div className="space-y-1 pl-11">
+                                    <p className="text-sm md:text-base text-foreground leading-relaxed">
                                         198 rue de l'hôpital Tokoin hôpital
                                     </p>
-                                    <p className="text-base md:text-lg text-muted leading-relaxed">
+                                    <p className="text-sm md:text-base text-muted leading-relaxed">
                                         Face entrée CHU-SO de Tokoin
                                     </p>
                                 </div>
@@ -198,11 +198,9 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={formInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-                            className="glass rounded-2xl p-8 md:p-10 lg:p-12 backdrop-blur-xl border border-glass-border relative overflow-hidden shadow-lg"
+                            className="rounded-2xl p-8 md:p-10 lg:p-12 bg-surface/50 border border-border/50"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-50 -z-10"></div>
-
-                            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 {submitStatus.type && (
                                     <motion.div
                                         initial={{ opacity: 0, y: -10 }}
@@ -228,9 +226,9 @@ export default function ContactPage() {
                                     </motion.div>
                                 )}
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-semibold text-foreground block">
+                                        <label htmlFor="name" className="text-sm text-muted block">
                                             Nom complet *
                                         </label>
                                         <input
@@ -238,13 +236,13 @@ export default function ContactPage() {
                                             id="name"
                                             name="name"
                                             required
-                                            className="w-full glass border-2 border-border/70 rounded-xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-muted/60"
+                                            className="w-full bg-background border border-border/50 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors placeholder:text-muted/50"
                                             placeholder="Votre nom complet"
                                         />
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-semibold text-foreground block">
+                                        <label htmlFor="email" className="text-sm text-muted block">
                                             Email *
                                         </label>
                                         <input
@@ -252,15 +250,15 @@ export default function ContactPage() {
                                             id="email"
                                             name="email"
                                             required
-                                            className="w-full glass border-2 border-border/70 rounded-xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-muted/60"
+                                            className="w-full bg-background border border-border/50 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors placeholder:text-muted/50"
                                             placeholder="votre@email.com"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <label htmlFor="phone" className="text-sm font-semibold text-foreground block">
+                                        <label htmlFor="phone" className="text-sm text-muted block">
                                             Téléphone *
                                         </label>
                                         <input
@@ -268,35 +266,35 @@ export default function ContactPage() {
                                             id="phone"
                                             name="phone"
                                             required
-                                            className="w-full glass border-2 border-border/70 rounded-xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-muted/60"
+                                            className="w-full bg-background border border-border/50 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors placeholder:text-muted/50"
                                             placeholder="+228 XX XX XX XX"
                                         />
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label htmlFor="company" className="text-sm font-semibold text-foreground block">
+                                        <label htmlFor="company" className="text-sm text-muted block">
                                             Entreprise
                                         </label>
                                         <input
                                             type="text"
                                             id="company"
                                             name="company"
-                                            className="w-full glass border-2 border-border/70 rounded-xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-muted/60"
+                                            className="w-full bg-background border border-border/50 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors placeholder:text-muted/50"
                                             placeholder="Nom de votre entreprise"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-semibold text-foreground block">
+                                    <label htmlFor="message" className="text-sm text-muted block">
                                         Message *
                                     </label>
                                     <textarea
                                         id="message"
                                         name="message"
                                         required
-                                        rows={6}
-                                        className="w-full glass border-2 border-border/70 rounded-xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none placeholder:text-muted/60"
+                                        rows={5}
+                                        className="w-full bg-background border border-border/50 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-muted/50"
                                         placeholder="Détaillez votre projet, vos besoins et vos objectifs..."
                                     />
                                 </div>
@@ -304,11 +302,9 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full group relative px-8 py-4 bg-primary text-white font-bold text-lg rounded-xl overflow-hidden transition-all hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-primary/30 hover:shadow-primary/50"
+                                    className="w-full group px-8 py-3.5 bg-primary text-white font-medium rounded-lg transition-all hover:bg-primary-hover disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-500/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                                    <span className="relative z-10 flex items-center justify-center gap-2">
+                                    <span className="flex items-center justify-center gap-2">
                                         {isSubmitting ? (
                                             <>
                                                 <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
@@ -320,8 +316,8 @@ export default function ContactPage() {
                                         ) : (
                                             <>
                                                 Envoyer ma demande
-                                                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                                 </svg>
                                             </>
                                         )}
