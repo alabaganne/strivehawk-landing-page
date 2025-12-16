@@ -1,50 +1,44 @@
 'use client';
 
 import Link from 'next/link';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { FooterBackgroundGradient, TextHoverEffect } from '@/components/ui/hover-footer';
 
-const footerLinks = {
-  navigation: [
-    { label: 'Accueil', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Portfolio', href: '/#portfolio' },
-    { label: 'Contact', href: '/contact' },
-  ],
-  services: [
-    { label: 'Cloud & Infrastructure', href: '/#services' },
-    { label: 'Cybersécurité', href: '/#services' },
-    { label: 'Développement', href: '/#services' },
-    { label: 'Support IT', href: '/#services' },
-  ],
-};
+const footerLinks = [
+  {
+    title: 'Navigation',
+    links: [
+      { label: 'Accueil', href: '/' },
+      { label: 'Services', href: '/#services' },
+      { label: 'Portfolio', href: '/#portfolio' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Services',
+    links: [
+      { label: 'Cloud & Infrastructure', href: '/#services' },
+      { label: 'Cybersécurité', href: '/#services' },
+      { label: 'Développement', href: '/#services' },
+      { label: 'Support IT', href: '/#services' },
+    ],
+  },
+];
 
 const contactInfo = [
   {
-    label: 'lome@strivehawk.com',
+    icon: <Mail size={18} className="text-primary" />,
+    text: 'lome@strivehawk.com',
     href: 'mailto:lome@strivehawk.com',
-    icon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
   },
   {
-    label: '+228 70 75 88 04',
+    icon: <Phone size={18} className="text-primary" />,
+    text: '+228 70 75 88 04',
     href: 'tel:+22870758804',
-    icon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    ),
   },
   {
-    label: 'Lomé, Togo',
-    href: null,
-    icon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    icon: <MapPin size={18} className="text-primary" />,
+    text: 'Lomé, Togo',
   },
 ];
 
@@ -80,98 +74,62 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-4">
+    <footer className="bg-surface/10 relative h-fit rounded-3xl overflow-hidden m-4 md:m-8">
+      <div className="max-w-7xl mx-auto p-8 md:p-14 z-40 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16 pb-12">
+          {/* Brand section */}
+          <div className="flex flex-col space-y-4">
+            <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">S</span>
+                <span className="text-white text-sm font-bold">S</span>
               </div>
-              Strivehawk
+              <span className="text-foreground text-2xl font-bold">Strivehawk</span>
             </Link>
-            <p className="text-sm text-muted leading-relaxed mb-6">
-              Solutions IT premium pour faire grandir votre entreprise.
+            <p className="text-sm text-muted leading-relaxed">
+              Solutions IT premium pour faire grandir votre entreprise. Expertise en cloud, développement et cybersécurité.
             </p>
-            {/* Social links */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-9 h-9 bg-background border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/50 transition-colors"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
+          </div>
+
+          {/* Footer link sections */}
+          {footerLinks.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-foreground text-lg font-semibold mb-6">
+                {section.title}
+              </h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-muted hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
 
-          {/* Navigation */}
+          {/* Contact section */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Navigation
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.navigation.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+            <h4 className="text-foreground text-lg font-semibold mb-6">
               Contact
             </h4>
-            <ul className="space-y-3">
-              {contactInfo.map((item, index) => (
-                <li key={index}>
+            <ul className="space-y-4">
+              {contactInfo.map((item, i) => (
+                <li key={i} className="flex items-center space-x-3">
+                  {item.icon}
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="flex items-center gap-2.5 text-sm text-muted hover:text-primary transition-colors group"
+                      className="text-muted hover:text-primary transition-colors"
                     >
-                      <span className="text-muted group-hover:text-primary transition-colors">
-                        {item.icon}
-                      </span>
-                      {item.label}
+                      {item.text}
                     </a>
                   ) : (
-                    <span className="flex items-center gap-2.5 text-sm text-muted">
-                      <span className="text-muted">
-                        {item.icon}
-                      </span>
-                      {item.label}
+                    <span className="text-muted hover:text-primary transition-colors">
+                      {item.text}
                     </span>
                   )}
                 </li>
@@ -180,16 +138,37 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted">
+        <hr className="border-t border-border my-8" />
+
+        {/* Footer bottom */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
+          {/* Social icons */}
+          <div className="flex space-x-6 text-muted">
+            {socialLinks.map(({ icon, name, href }) => (
+              <a
+                key={name}
+                href={href}
+                aria-label={name}
+                className="hover:text-primary transition-colors"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <p className="text-center text-muted md:text-left">
             © {new Date().getFullYear()} Strivehawk. Tous droits réservés.
-          </p>
-          <p className="text-sm text-muted">
-            Fait avec <span className="text-primary">♥</span> en Afrique de l'Ouest
           </p>
         </div>
       </div>
+
+      {/* Text hover effect */}
+      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36">
+        <TextHoverEffect text="Strivehawk" className="z-50" />
+      </div>
+
+      <FooterBackgroundGradient />
     </footer>
   );
 }
