@@ -38,7 +38,22 @@ export default function FAQ() {
     return (
         <section id="faq" className="py-32 px-6 bg-background">
             <div className="max-w-3xl mx-auto">
+                {/* Section header */}
                 <FadeIn>
+                    <div className="text-center mb-16">
+                        <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
+                            FAQ
+                        </span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                            Questions <span className="gradient-text">fréquentes</span>
+                        </h2>
+                        <p className="text-lg text-muted max-w-xl mx-auto">
+                            Tout ce que vous devez savoir avant de commencer votre projet avec nous.
+                        </p>
+                    </div>
+                </FadeIn>
+
+                <FadeIn delay={0.1}>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
                             <div

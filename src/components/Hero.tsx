@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplineScene } from '@/components/ui/splite';
+import { Spotlight } from '@/components/ui/spotlight';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -307,84 +309,103 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto w-full relative z-20">
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-xs md:text-sm font-medium text-foreground mb-10 mt-0 w-fit backdrop-blur-xl hover:bg-foreground/10 transition-all cursor-default group border border-primary/20 shadow-lg">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          <span>Solutions IT Premium</span>
-        </div>
+      {/* Spotlight effect */}
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="rgba(59, 130, 246, 0.5)"
+      />
 
-        <h1
-          ref={titleRef}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-bold tracking-tight text-foreground mb-8 md:mb-10 leading-[1.05] max-w-5xl uppercase"
-        >
-          <span className="title-word block text-foreground/20">SOLUTIONS</span>
-          <span className="title-word block text-foreground/50">QUI</span>
-          <span className="title-word block gradient-text">IMPACTENT</span>
-        </h1>
+      <div className="max-w-7xl mx-auto w-full relative z-20">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-0">
+          {/* Left content */}
+          <div className="flex-1 lg:pr-8">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-xs md:text-sm font-medium text-foreground mb-10 mt-0 w-fit backdrop-blur-xl hover:bg-foreground/10 transition-all cursor-default group border border-primary/20 shadow-lg">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              <span>Votre Partenaire Digital</span>
+            </div>
 
-        <p
-          ref={subtitleRef}
-          className="text-xl md:text-2xl lg:text-3xl text-muted max-w-2xl leading-relaxed font-light mb-12 md:mb-16"
-        >
-          Infrastructure digitale sur-mesure, sécurisée et évolutive.
-        </p>
+            <h1
+              ref={titleRef}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-foreground mb-8 md:mb-10 leading-[1.05] uppercase"
+            >
+              <span className="title-word block text-foreground/20" style={{ maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 100%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 100%)' }}>SOLUTIONS</span>
+              <span className="title-word block text-foreground/50" style={{ maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 100%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 100%)' }}>QUI</span>
+              <span className="title-word block gradient-text" style={{ maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%)' }}>IMPACTENT</span>
+            </h1>
 
-        <div
-          ref={ctaRef}
-          className="flex flex-col sm:flex-row gap-5 md:gap-6"
-        >
-          <Link
-            href="/contact"
-            className="group relative px-10 md:px-12 py-5 md:py-6 bg-primary text-white font-bold text-lg md:text-xl rounded-full overflow-hidden transition-all hover:scale-[1.03] text-center shadow-2xl shadow-primary/40 hover:shadow-primary/60"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-500/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-            
-            <span className="relative z-10 flex items-center justify-center gap-3">
-              Discutons de votre projet
-              <svg
-                className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:scale-110"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <p
+              ref={subtitleRef}
+              className="text-xl md:text-2xl lg:text-2xl text-muted max-w-xl leading-relaxed font-light mb-12 md:mb-16"
+            >
+              Infrastructure digitale sur-mesure, sécurisée et évolutive.
+            </p>
+
+            <div
+              ref={ctaRef}
+              className="flex flex-col sm:flex-row gap-5 md:gap-6"
+            >
+              <Link
+                href="/contact"
+                className="group relative px-10 md:px-12 py-5 md:py-6 bg-primary text-white font-bold text-lg md:text-xl rounded-full overflow-hidden transition-all hover:scale-[1.03] text-center shadow-2xl shadow-primary/40 hover:shadow-primary/60"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </span>
-          </Link>
-          
-          <Link
-            href="#portfolio"
-            className="group relative px-10 md:px-12 py-5 md:py-6 text-foreground font-bold text-lg md:text-xl border-2 border-primary/30 rounded-full hover:bg-primary/10 transition-all glass backdrop-blur-xl text-center hover:border-primary/50 hover:shadow-xl shadow-lg"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full blur-xl"></div>
-            
-            <span className="relative z-10 flex items-center justify-center gap-3">
-              Voir nos réalisations
-              <svg
-                className="w-6 h-6 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-500/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Discutons de votre projet
+                  <svg
+                    className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:scale-110"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </span>
+              </Link>
+
+              <Link
+                href="#portfolio"
+                className="group relative px-10 md:px-12 py-5 md:py-6 text-foreground font-bold text-lg md:text-xl border-2 border-primary/30 rounded-full hover:bg-primary/10 transition-all glass backdrop-blur-xl text-center hover:border-primary/50 hover:shadow-xl shadow-lg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </span>
-          </Link>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full blur-xl"></div>
+
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Voir nos réalisations
+                  <svg
+                    className="w-6 h-6 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right content - 3D Robot */}
+          <div className="hidden lg:block flex-1 h-[500px] xl:h-[600px] relative">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </section>

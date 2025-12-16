@@ -7,19 +7,32 @@ import Footer from '@/components/Footer';
 
 const contactInfo = [
   {
-    icon: '📧',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
     label: 'Email',
     value: 'lome@strivehawk.com',
     href: 'mailto:lome@strivehawk.com',
   },
   {
-    icon: '📞',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+    ),
     label: 'Téléphone',
     value: '+228 70 75 88 04',
     href: 'tel:+22870758804',
   },
   {
-    icon: '📍',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
     label: 'Adresse',
     value: 'Lomé, Togo',
     href: '#',
@@ -77,10 +90,57 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background flex flex-col">
-      <Navbar />
+    <main className="min-h-screen bg-background flex flex-col relative overflow-hidden">
+      {/* Globe background effect */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Stars */}
+        <div className="absolute inset-0">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-0.5 h-0.5 bg-white rounded-full opacity-30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 60}%`,
+                animationDelay: `${Math.random() * 3}s`,
+              }}
+            />
+          ))}
+        </div>
 
-      <div className="flex-grow pt-32 pb-20 px-6">
+        {/* Globe horizon glow */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-[60vh]">
+          {/* Main globe arc */}
+          <div
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full aspect-[2/1] rounded-[100%] border-t border-primary/30"
+            style={{
+              background: 'radial-gradient(ellipse at center top, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 60%)',
+              boxShadow: '0 -40px 100px rgba(59, 130, 246, 0.2), 0 -20px 60px rgba(59, 130, 246, 0.15), inset 0 2px 20px rgba(59, 130, 246, 0.1)',
+            }}
+          />
+          {/* Horizon glow line */}
+          <div
+            className="absolute bottom-[49%] left-0 right-0 h-[2px]"
+            style={{
+              background: 'linear-gradient(to right, transparent 10%, rgba(59, 130, 246, 0.4) 30%, rgba(96, 165, 250, 0.6) 50%, rgba(59, 130, 246, 0.4) 70%, transparent 90%)',
+              boxShadow: '0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3), 0 0 100px rgba(59, 130, 246, 0.2)',
+            }}
+          />
+          {/* Light beam from horizon */}
+          <div
+            className="absolute bottom-[50%] left-1/2 -translate-x-1/2 w-[40%] h-[50vh]"
+            style={{
+              background: 'linear-gradient(to top, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 40%, transparent 100%)',
+              clipPath: 'polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%)',
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="relative z-10 flex flex-col flex-grow">
+        <Navbar />
+
+        <div className="flex-grow pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -110,7 +170,7 @@ export default function ContactPage() {
                   href={item.href}
                   className="group flex items-center gap-4 p-4 bg-surface border border-border rounded-xl hover:border-primary/30 transition-all"
                 >
-                  <div className="w-12 h-12 bg-background border border-border rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-background border border-border rounded-xl flex items-center justify-center text-primary group-hover:scale-110 group-hover:border-primary/30 transition-all">
                     {item.icon}
                   </div>
                   <div>
@@ -249,9 +309,10 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </main>
   );
 }

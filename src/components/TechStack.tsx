@@ -87,7 +87,7 @@ export default function TechStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-surface relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
