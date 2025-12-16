@@ -147,7 +147,7 @@ export default function Navbar() {
             <nav
                 className={`fixed top-0 left-0 right-0 h-20 flex items-center justify-between px-6 md:px-8 z-50 transition-all duration-300 ${
                     isScrolled
-                        ? 'bg-background/95 backdrop-blur-md shadow-lg'
+                        ? 'bg-background/95 backdrop-blur-md'
                         : 'bg-background/80 backdrop-blur-sm'
                 }`}
             >
