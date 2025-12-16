@@ -6,73 +6,58 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const process = [
+const steps = [
   {
     number: '01',
-    title: 'Analyse & Diagnostic',
-    description: 'Audit complet de votre infrastructure actuelle, identification des opportunités et définition de la stratégie.',
+    title: 'Analyse',
+    description: 'Audit complet de votre infrastructure et identification des opportunités.',
     icon: '🔍',
+    gradient: 'from-blue-500 to-cyan-400',
   },
   {
     number: '02',
-    title: 'Conception & Planification',
-    description: 'Notre équipe crée des maquettes et prototypes interactifs pour valider la direction créative et technique.',
+    title: 'Conception',
+    description: 'Maquettes et prototypes pour valider la direction technique.',
     icon: '📐',
+    gradient: 'from-violet-500 to-purple-400',
   },
   {
     number: '03',
-    title: 'Développement & Implémentation',
-    description: 'Nous construisons votre solution avec les technologies les plus performantes et modernes, en respectant les délais.',
+    title: 'Développement',
+    description: 'Construction avec les technologies les plus performantes.',
     icon: '⚙️',
+    gradient: 'from-emerald-500 to-green-400',
   },
   {
     number: '04',
-    title: 'Lancement & Suivi',
-    description: 'Mise en ligne optimisée et accompagnement continu pour garantir votre succès et votre croissance.',
+    title: 'Lancement',
+    description: 'Mise en ligne et accompagnement continu pour votre succès.',
     icon: '🚀',
+    gradient: 'from-orange-500 to-amber-400',
   },
 ];
 
 export default function Process() {
   const sectionRef = useRef<HTMLElement>(null);
-  const timelineRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const items = timelineRef.current?.querySelectorAll('.timeline-item');
-      if (items) {
-        items.forEach((item, index) => {
-          const isEven = index % 2 === 0;
-          
-          gsap.from(item, {
+      const cards = cardsRef.current?.querySelectorAll('.process-card');
+      if (cards) {
+        cards.forEach((card, index) => {
+          gsap.from(card, {
             scrollTrigger: {
-              trigger: item,
+              trigger: card,
               start: 'top 85%',
               toggleActions: 'play none none reverse',
             },
             opacity: 0,
-            x: isEven ? -80 : 80,
-            scale: 0.9,
-            duration: 0.8,
-            delay: index * 0.1,
+            y: 40,
+            duration: 0.6,
+            delay: index * 0.15,
             ease: 'power3.out',
           });
-
-          const marker = item.querySelector('.timeline-marker');
-          if (marker) {
-            gsap.from(marker, {
-              scrollTrigger: {
-                trigger: item,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse',
-              },
-              scale: 0,
-              rotation: -180,
-              duration: 0.6,
-              delay: index * 0.1 + 0.2,
-              ease: 'back.out(1.7)',
-            });
-          }
         });
       }
     }, sectionRef);
@@ -82,69 +67,53 @@ export default function Process() {
 
   return (
     <section id="process" ref={sectionRef} className="py-32 px-6 bg-surface relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl translate-y-1/2 -translate-x-1/2" />
-      
+      {/* Background decoration */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-20">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-2 block">
+        <div className="text-center mb-16">
+          <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
             Notre Processus
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             <span className="gradient-text">Comment</span> ça marche
           </h2>
+          <p className="text-lg text-muted max-w-2xl mx-auto">
+            Une méthodologie éprouvée pour transformer vos idées en solutions performantes.
+          </p>
         </div>
 
-        <div ref={timelineRef} className="relative">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/50 to-primary opacity-20"></div>
-            <div className="absolute inset-0 bg-border"></div>
-          </div>
+        {/* Steps grid */}
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="process-card group bg-background border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 relative"
+            >
+              {/* Connector line (hidden on last item and mobile) */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-border z-10" />
+              )}
 
-          <div className="space-y-16 md:space-y-24">
-            {process.map((step, index) => {
-              const isEven = index % 2 === 0;
-              
-              return (
-                <div
-                  key={index}
-                  className="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-8 cursor-pointer"
-                >
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full glass border-2 border-primary items-center justify-center z-10 bg-surface shadow-lg">
-                    <span className="text-2xl">{step.icon}</span>
-                    <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-75"></div>
-                  </div>
+              {/* Number badge */}
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-5`}>
+                <span className="text-white font-bold text-lg">{step.number}</span>
+              </div>
 
-                  <div
-                    className={`w-full md:w-[calc(50%-3.5rem)] glass rounded-2xl p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 ${
-                      isEven ? 'md:mr-auto md:pr-4' : 'md:ml-auto md:pl-4'
-                    }`}
-                  >
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="text-5xl md:text-6xl font-bold text-foreground/10 leading-none">
-                        {step.number}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                          {step.title}
-                        </h3>
-                        <p className="text-muted leading-relaxed text-sm md:text-base">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4 pt-4 border-t border-border">
-                      <div className="flex items-center gap-2 text-xs text-muted">
-                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                        <span>Étape {index + 1} sur {process.length}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+              {/* Icon */}
+              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {step.icon}
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                {step.title}
+              </h3>
+              <p className="text-sm text-muted leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

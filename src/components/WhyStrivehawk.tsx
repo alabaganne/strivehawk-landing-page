@@ -1,27 +1,26 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import FadeIn from './FadeIn';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const pillars = [
+const values = [
   {
     title: 'Fiabilité',
-    description: 'Nous restons à vos côtés à chaque étape.',
-    icon: '🛡️',
+    description: 'Un partenaire sur qui compter à chaque étape de votre transformation digitale.',
+    gradient: 'from-blue-500 to-cyan-400',
   },
   {
     title: 'Innovation',
-    description: 'Nous optimisons vos performances dans la durée.',
-    icon: '💡',
+    description: 'Des solutions modernes qui anticipent vos besoins de demain.',
+    gradient: 'from-violet-500 to-purple-400',
   },
   {
-    title: 'Résilience',
-    description: 'Vos systèmes et vos équipes restent solides, même face aux imprévus.',
-    icon: '🌱',
+    title: 'Proximité',
+    description: 'Une équipe à votre écoute, qui comprend votre réalité terrain.',
+    gradient: 'from-emerald-500 to-green-400',
   },
 ];
 
@@ -31,7 +30,7 @@ export default function WhyStrivehawk() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const cards = cardsRef.current?.querySelectorAll('.pillar-card');
+      const cards = cardsRef.current?.querySelectorAll('.value-card');
       if (cards) {
         cards.forEach((card, index) => {
           gsap.from(card, {
@@ -41,34 +40,11 @@ export default function WhyStrivehawk() {
               toggleActions: 'play none none reverse',
             },
             opacity: 0,
-            y: 50,
-            scale: 0.95,
-            duration: 0.8,
-            delay: index * 0.15,
+            y: 30,
+            duration: 0.6,
+            delay: index * 0.1,
             ease: 'power3.out',
           });
-
-          // Continuous subtle pulse on hover
-          const icon = card.querySelector('.pillar-icon');
-          if (icon) {
-            card.addEventListener('mouseenter', () => {
-              gsap.to(icon, {
-                scale: 1.1,
-                rotation: 5,
-                duration: 0.3,
-                ease: 'power2.out',
-              });
-            });
-
-            card.addEventListener('mouseleave', () => {
-              gsap.to(icon, {
-                scale: 1,
-                rotation: 0,
-                duration: 0.3,
-                ease: 'power2.out',
-              });
-            });
-          }
         });
       }
     }, sectionRef);
@@ -77,67 +53,64 @@ export default function WhyStrivehawk() {
   }, []);
 
   return (
-    <section id="process" ref={sectionRef} className="py-32 px-6 bg-background relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl -translate-y-1/2 -translate-x-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent blur-3xl translate-y-1/2 translate-x-1/2" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.015]" />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <FadeIn>
-          <div className="mb-20 text-center max-w-4xl mx-auto">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-              Pourquoi Strivehawk ?
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              La technologie est puissante. Mais c'est{' '}
-              <span className="gradient-text">l'humain</span> qui fait la différence.
-            </h2>
-            <p className="text-xl text-muted leading-relaxed">
-              Chez Strivehawk, nous croyons que la technologie ne vaut que si elle améliore la vie, simplifie le travail et renforce les relations humaines. C'est pourquoi nous développons des solutions centrées sur vos équipes, vos défis et votre réalité, pas seulement sur les systèmes.
-            </p>
-          </div>
-        </FadeIn>
+    <section ref={sectionRef} className="py-32 px-6 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {pillars.map((pillar, index) => (
-            <div
-              key={index}
-              className="pillar-card group glass rounded-2xl p-8 md:p-10 transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 relative overflow-hidden cursor-pointer"
-            >
-              {/* Hover glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-primary/5 transition-all duration-500 rounded-2xl opacity-0 group-hover:opacity-100 -z-10 blur-2xl"></div>
-              
-              <div className="relative z-10 text-center">
-                {/* Icon with animation */}
-                <div className="pillar-icon w-20 h-20 mx-auto mb-6 rounded-full glass border-2 border-primary/30 items-center justify-center flex bg-surface shadow-lg relative">
-                  <span className="text-4xl">{pillar.icon}</span>
-                  <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-30"></div>
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                  {pillar.title}
-                </h3>
-                <p className="text-muted leading-relaxed text-base md:text-lg">
-                  {pillar.description}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left content */}
+          <div>
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
+              Pourquoi Strivehawk
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              La technologie est puissante. <span className="gradient-text">L'humain</span> fait la différence.
+            </h2>
+            <p className="text-lg text-muted leading-relaxed mb-8">
+              Nous croyons que la technologie doit simplifier le travail et renforcer les relations humaines. C'est pourquoi nos solutions sont centrées sur vos équipes et votre réalité.
+            </p>
+
+            {/* Key point */}
+            <div className="flex items-start gap-4 p-4 bg-surface border border-border rounded-xl">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-primary text-xl">✓</span>
+              </div>
+              <div>
+                <div className="font-semibold text-foreground mb-1">Approche sur mesure</div>
+                <p className="text-sm text-muted">
+                  Chaque solution est adaptée à vos défis spécifiques, pas une approche générique.
                 </p>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom quote */}
-        <FadeIn delay={0.3}>
-          <div className="mt-20 text-center max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-muted italic leading-relaxed">
-              Chez Strivehawk, chaque solution commence par une écoute.
-              <br />
-              <span className="text-foreground font-semibold">Parce qu'avant les ordinateurs, il y a des personnes.</span>
-            </p>
           </div>
-        </FadeIn>
+
+          {/* Right - Value cards */}
+          <div ref={cardsRef} className="space-y-4">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="value-card group flex items-start gap-4 p-5 bg-surface border border-border rounded-xl hover:border-primary/30 transition-all"
+              >
+                {/* Number */}
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${value.gradient} flex items-center justify-center flex-shrink-0`}>
+                  <span className="text-white font-bold text-lg">0{index + 1}</span>
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
