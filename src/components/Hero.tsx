@@ -8,26 +8,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full px-6 md:px-8 min-h-screen overflow-hidden flex flex-col items-center justify-center
-      bg-[linear-gradient(to_bottom,#000_0%,#0a0a0a_40%,#0d1929_75%,#1a365d_100%)]"
+      className="relative w-full px-6 md:px-8 min-h-screen overflow-hidden flex flex-col items-center justify-center bg-background"
     >
       {/* Grid BG */}
       <div
-        className="absolute inset-0 opacity-60 w-full
-        bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)]
+        className="absolute inset-0 opacity-40 w-full
+        bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)]
         bg-[size:4rem_4rem]
-        [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-      />
-
-      {/* Radial Accent Globe at bottom */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2
-        h-[400px] w-[200%] md:h-[500px] lg:h-[600px]
-        rounded-t-[100%] border-t-2 border-primary/40
-        bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15)_0%,transparent_70%)]"
-        style={{
-          boxShadow: '0 -20px 80px rgba(59, 130, 246, 0.2), inset 0 2px 30px rgba(59, 130, 246, 0.1)',
-        }}
+        [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]"
       />
 
       {/* Content container */}
@@ -37,8 +25,8 @@ export default function Hero() {
           <span
             className="text-sm text-gray-400 font-mono px-5 py-2
             bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent
-            border-[2px] border-white/10
-            rounded-3xl tracking-tight uppercase flex items-center justify-center
+            border border-white/10
+            rounded-full tracking-tight uppercase flex items-center justify-center
             hover:border-primary/30 transition-colors"
           >
             Votre Partenaire Digital
@@ -49,7 +37,7 @@ export default function Hero() {
         {/* Title */}
         <h1
           className="animate-fade-in text-balance
-          bg-gradient-to-br from-white from-30% to-white/40
+          bg-gradient-to-b from-white to-white/60
           bg-clip-text py-4 text-5xl font-bold leading-none tracking-tighter
           text-transparent sm:text-6xl md:text-7xl lg:text-8xl"
         >
@@ -73,7 +61,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.35s' }}>
           <Button
             asChild
-            className="z-20 font-mono tracking-tight text-center text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all"
+            className="font-mono tracking-tight text-center text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all"
           >
             <Link href="/contact">
               Discutons de votre projet
@@ -84,7 +72,7 @@ export default function Hero() {
           <Button
             asChild
             variant="outline"
-            className="z-20 font-mono tracking-tight text-center text-lg px-8 py-6 rounded-full border-2 border-white/20 hover:border-primary/50 hover:bg-primary/10 transition-all"
+            className="font-mono tracking-tight text-center text-lg px-8 py-6 rounded-full border border-white/20 hover:border-primary/50 hover:bg-primary/10 transition-all"
           >
             <Link href="#portfolio">
               Voir nos réalisations

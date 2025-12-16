@@ -90,31 +90,8 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background flex flex-col relative overflow-hidden">
-      {/* Globe background effect - positioned at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[350px] pointer-events-none overflow-hidden">
-        {/* Globe horizon glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%]">
-          {/* Main globe arc */}
-          <div
-            className="w-full h-[300px] rounded-t-[100%] border-t-2 border-primary/30"
-            style={{
-              background: 'radial-gradient(ellipse at top center, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 40%, transparent 70%)',
-              boxShadow: '0 -30px 80px rgba(59, 130, 246, 0.2), inset 0 2px 20px rgba(59, 130, 246, 0.1)',
-            }}
-          />
-        </div>
-        {/* Horizon glow line */}
-        <div
-          className="absolute bottom-[290px] left-0 right-0 h-[2px]"
-          style={{
-            background: 'linear-gradient(to right, transparent 10%, rgba(59, 130, 246, 0.4) 30%, rgba(96, 165, 250, 0.6) 50%, rgba(59, 130, 246, 0.4) 70%, transparent 90%)',
-            boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2)',
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 flex flex-col flex-grow">
+    <main className="min-h-screen bg-background flex flex-col">
+      <div className="flex flex-col flex-grow">
         <Navbar />
 
         <div className="flex-grow pt-32 pb-20 px-6">
