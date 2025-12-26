@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 function SunIcon({ className }: { className?: string }) {
     return (
@@ -154,9 +155,15 @@ export default function Navbar() {
                 <div className="max-w-7xl w-full mx-auto flex items-center justify-between">
                     <Link
                         href="/"
-                        className="text-2xl font-bold text-foreground flex items-center gap-2 hover:opacity-80 transition-opacity"
+                        className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                     >
-                        <span className="text-primary">Strivehawk</span>
+                        <Image
+                            src="/logo-blue.png"
+                            alt="Strivehawk"
+                            width={150}
+                            height={40}
+                            className="h-8 w-auto"
+                        />
                     </Link>
 
                     {/* Desktop Menu */}

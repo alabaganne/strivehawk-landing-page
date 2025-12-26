@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
@@ -72,9 +73,14 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
               delay: 0.1,
             }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
-              Strivehawk
-            </h1>
+            <Image
+              src="/logo-blue.png"
+              alt="Strivehawk"
+              width={300}
+              height={80}
+              className="h-16 md:h-20 w-auto"
+              priority
+            />
           </motion.div>
         </div>
 
