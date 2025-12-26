@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const footerLinks = {
   navigation: [
@@ -86,11 +87,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">S</span>
-              </div>
-              Strivehawk
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <Image
+                src="/logo-blue.png"
+                alt="Strivehawk"
+                width={150}
+                height={40}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-sm text-muted leading-relaxed mb-6">
               Solutions IT premium pour faire grandir votre entreprise.

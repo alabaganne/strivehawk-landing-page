@@ -143,6 +143,18 @@ body {
   background-clip: text;
 }
 
+/* Special italic style for blue underlined text */
+.text-blue-italic {
+  color: var(--primary);
+  font-family: var(--font-imperial-script), cursive;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  font-size: 1.1em;
+  text-transform: lowercase;
+}
+
 .glass {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);

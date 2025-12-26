@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Imperial_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -8,6 +8,13 @@ const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const imperialScript = Imperial_Script({
+  variable: "--font-imperial-script",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -60,7 +67,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={outfit.variable}>
+      <body className={`${outfit.variable} ${imperialScript.variable}`}>
         <ThemeProvider>
           <SmoothScroll />
           {children}

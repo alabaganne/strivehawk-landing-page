@@ -182,9 +182,8 @@ export default function CTA() {
                         {/* Title with mobile-optimized sizing */}
                         <h2 className="cta-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-foreground mb-4 sm:mb-5 md:mb-6 lg:mb-8 tracking-tight leading-[1.1] px-2 sm:px-0">
                             Prêt à{' '}
-                            <span className="gradient-text relative inline-block">
+                            <span className="text-blue-italic">
                                 renforcer
-                                <span className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-40"></span>
                             </span>
                             {' '}vos performances et vos équipes ?
                         </h2>
