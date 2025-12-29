@@ -74,7 +74,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
             }}
           >
             <Image
-              src="/logo-blue.png"
+              src="/logo-blue.svg"
               alt="Strivehawk"
               width={300}
               height={80}
