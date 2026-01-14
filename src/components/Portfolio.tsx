@@ -10,11 +10,25 @@ import {
   HiGlobeAlt,
   HiSpeakerphone,
   HiColorSwatch,
+  HiExternalLink,
 } from 'react-icons/hi';
+import { FaGithub } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
+type Project = {
+  title: string;
+  tag: string;
+  description: string;
+  icon: IconType;
+  gradient: string;
+  metrics: string;
+  liveUrl?: string;
+  githubUrl?: string;
+};
+
+const projects: Project[] = [
   {
     title: 'Système Cloud Centralisé',
     tag: 'IT • Cloud Infrastructure',
@@ -41,6 +55,7 @@ const projects = [
     icon: HiCalendar,
     gradient: 'from-violet-500 to-purple-400',
     metrics: 'Process digitalisé & réduction des no-shows',
+    liveUrl: 'https://martinezautodetailwa.com/',
   },
   {
     title: 'Refonte de Site Web Moderne',
@@ -165,23 +180,53 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full">
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-muted text-sm leading-relaxed mb-5">
+                  <p className="text-muted text-sm leading-relaxed mb-5 flex-grow">
                     {project.description}
                   </p>
 
-                  {/* Metrics */}
-                  <div className="flex items-center gap-2 pt-4 border-t border-border">
-                    <div
-                      className={`w-2 h-2 rounded-full bg-gradient-to-br ${project.gradient}`}
-                    />
-                    <span className="text-sm font-semibold text-primary">
-                      ➡ {project.metrics}
-                    </span>
+                  {/* Metrics & Links */}
+                  <div className="pt-4 border-t border-border space-y-3">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className={`w-2 h-2 rounded-full bg-gradient-to-br ${project.gradient}`}
+                      />
+                      <span className="text-sm font-semibold text-primary">
+                        ➡ {project.metrics}
+                      </span>
+                    </div>
+
+                    {/* Project Links */}
+                    {(project.liveUrl || project.githubUrl) && (
+                      <div className="flex items-center gap-3">
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-200"
+                          >
+                            <HiExternalLink className="w-3.5 h-3.5" />
+                            Voir le projet
+                          </a>
+                        )}
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-hover text-muted text-xs font-medium rounded-full hover:text-foreground border border-border hover:border-primary/40 transition-all duration-200"
+                          >
+                            <FaGithub className="w-3.5 h-3.5" />
+                            GitHub
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </article>
