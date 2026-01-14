@@ -185,12 +185,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-center items-center gap-4">
           <p className="text-sm text-muted">
             © {new Date().getFullYear()} Strivehawk. Tous droits réservés.
-          </p>
-          <p className="text-sm text-muted">
-            Fait avec <span className="text-primary">♥</span> en Afrique de l'Ouest
           </p>
         </div>
       </div>
