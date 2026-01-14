@@ -180,54 +180,52 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col h-full">
+                <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-muted text-sm leading-relaxed mb-5 flex-grow">
+                  <p className="text-muted text-sm leading-relaxed mb-5">
                     {project.description}
                   </p>
 
-                  {/* Metrics & Links */}
-                  <div className="pt-4 border-t border-border space-y-3">
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`w-2 h-2 rounded-full bg-gradient-to-br ${project.gradient}`}
-                      />
-                      <span className="text-sm font-semibold text-primary">
-                        ➡ {project.metrics}
-                      </span>
-                    </div>
-
-                    {/* Project Links */}
-                    {(project.liveUrl || project.githubUrl) && (
-                      <div className="flex items-center gap-3">
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-200"
-                          >
-                            <HiExternalLink className="w-3.5 h-3.5" />
-                            Voir le projet
-                          </a>
-                        )}
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-hover text-muted text-xs font-medium rounded-full hover:text-foreground border border-border hover:border-primary/40 transition-all duration-200"
-                          >
-                            <FaGithub className="w-3.5 h-3.5" />
-                            GitHub
-                          </a>
-                        )}
-                      </div>
-                    )}
+                  {/* Metrics */}
+                  <div className="flex items-center gap-2 pt-4 border-t border-border">
+                    <div
+                      className={`w-2 h-2 rounded-full bg-gradient-to-br ${project.gradient}`}
+                    />
+                    <span className="text-sm font-semibold text-primary">
+                      ➡ {project.metrics}
+                    </span>
                   </div>
+
+                  {/* Project Links */}
+                  {(project.liveUrl || project.githubUrl) && (
+                    <div className="flex items-center gap-3 mt-4">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-200"
+                        >
+                          <HiExternalLink className="w-3.5 h-3.5" />
+                          Voir le projet
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-hover text-muted text-xs font-medium rounded-full hover:text-foreground border border-border hover:border-primary/40 transition-all duration-200"
+                        >
+                          <FaGithub className="w-3.5 h-3.5" />
+                          GitHub
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </article>
             );
