@@ -177,6 +177,34 @@ export default function Portfolio() {
                       {project.tag}
                     </span>
                   </div>
+
+                  {/* Hover overlay with links */}
+                  {(project.liveUrl || project.githubUrl) && (
+                    <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2 bg-white text-gray-900 text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-200"
+                        >
+                          <HiExternalLink className="w-4 h-4" />
+                          Voir le projet
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white hover:text-gray-900 transition-all duration-200"
+                        >
+                          <FaGithub className="w-4 h-4" />
+                          GitHub
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -198,34 +226,6 @@ export default function Portfolio() {
                       ➡ {project.metrics}
                     </span>
                   </div>
-
-                  {/* Project Links */}
-                  {(project.liveUrl || project.githubUrl) && (
-                    <div className="flex items-center gap-3 mt-4">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-200"
-                        >
-                          <HiExternalLink className="w-3.5 h-3.5" />
-                          Voir le projet
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-hover text-muted text-xs font-medium rounded-full hover:text-foreground border border-border hover:border-primary/40 transition-all duration-200"
-                        >
-                          <FaGithub className="w-3.5 h-3.5" />
-                          GitHub
-                        </a>
-                      )}
-                    </div>
-                  )}
                 </div>
               </article>
             );
