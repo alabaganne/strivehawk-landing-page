@@ -181,11 +181,7 @@ export default function CTA() {
                     <div className="relative z-10 flex flex-col items-center">
                         {/* Title with mobile-optimized sizing */}
                         <h2 className="cta-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-foreground mb-4 sm:mb-5 md:mb-6 lg:mb-8 tracking-tight leading-[1.1] px-2 sm:px-0">
-                            Prêt à{' '}
-                            <span className="text-blue-italic">
-                                renforcer
-                            </span>
-                            {' '}vos performances et vos équipes ?
+                            Prêt à renforcer vos performances et vos équipes ?
                         </h2>
 
                         {/* Description with mobile-optimized spacing */}
