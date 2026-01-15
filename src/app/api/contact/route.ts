@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       subject: `Nouvelle demande de contact - ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">
+          <h2 style="color: #4DAADD; border-bottom: 2px solid #4DAADD; padding-bottom: 10px;">
             Nouvelle demande de contact
           </h2>
           <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
