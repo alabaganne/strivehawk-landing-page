@@ -11,28 +11,24 @@ const steps = [
     number: '01',
     title: 'Analyse',
     description: 'Audit complet de votre infrastructure et identification des opportunités.',
-    icon: '🔍',
     gradient: 'from-blue-500 to-cyan-400',
   },
   {
     number: '02',
     title: 'Conception',
     description: 'Maquettes et prototypes pour valider la direction technique.',
-    icon: '📐',
     gradient: 'from-violet-500 to-purple-400',
   },
   {
     number: '03',
     title: 'Développement',
     description: 'Construction avec les technologies les plus performantes.',
-    icon: '⚙️',
     gradient: 'from-emerald-500 to-green-400',
   },
   {
     number: '04',
     title: 'Lancement',
     description: 'Mise en ligne et accompagnement continu pour votre succès.',
-    icon: '🚀',
     gradient: 'from-orange-500 to-amber-400',
   },
 ];
@@ -98,11 +94,6 @@ export default function Process() {
               {/* Number badge */}
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-5`}>
                 <span className="text-white font-bold text-lg">{step.number}</span>
-              </div>
-
-              {/* Icon */}
-              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {step.icon}
               </div>
 
               {/* Content */}
