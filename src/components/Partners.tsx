@@ -1,14 +1,10 @@
+import Image from "next/image";
 import { Marquee } from "./marquee";
-import { MicrosoftIcon } from "./icon/microsoft-icon";
-import { LenovoIcon } from "./icon/lenovo-icon";
-import { CiscoIcon } from "./icon/cisco-icon";
-import { FortinetIcon } from "./icon/fortinet-icon";
 
-const icons = [
-    { component: MicrosoftIcon, id: 1 },
-    { component: LenovoIcon, id: 2 },
-    { component: CiscoIcon, id: 3 },
-    { component: FortinetIcon, id: 4 },
+const partners = [
+    { src: "/partners/microsoft.svg", alt: "Microsoft", id: 1, width: 140 },
+    { src: "/partners/lenovo.svg", alt: "Lenovo", id: 2, width: 120 },
+    { src: "/partners/cisco.svg", alt: "Cisco", id: 3, width: 100 },
 ];
 
 export default function Partners() {
@@ -27,20 +23,34 @@ export default function Partners() {
                 </div>
                 <Marquee className="flex items-center max-w-[70rem] mx-auto overflow-hidden mask-image-custom group">
                     <div className="flex animate-infinite-scroll [--animation-delay:50s] group-hover:[animation-play-state:paused]">
-                        {icons.map((icon) => (
+                        {partners.map((partner) => (
                             <div
-                                key={icon.id}
+                                key={partner.id}
                                 className="flex items-center mx-12 max-w-none opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 transform hover:scale-110"
                             >
-                                <icon.component className="w-auto h-auto text-muted hover:text-foreground transition-colors" />
+                                <Image
+                                    src={partner.src}
+                                    alt={partner.alt}
+                                    width={partner.width}
+                                    height={40}
+                                    className="h-auto"
+                                    style={{ width: partner.width }}
+                                />
                             </div>
                         ))}
-                        {icons.map((icon) => (
+                        {partners.map((partner) => (
                             <div
-                                key={`duplicate-${icon.id}`}
+                                key={`duplicate-${partner.id}`}
                                 className="flex items-center mx-12 max-w-none opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 transform hover:scale-110"
                             >
-                                <icon.component className="w-auto h-auto text-muted hover:text-foreground transition-colors" />
+                                <Image
+                                    src={partner.src}
+                                    alt={partner.alt}
+                                    width={partner.width}
+                                    height={40}
+                                    className="h-auto"
+                                    style={{ width: partner.width }}
+                                />
                             </div>
                         ))}
                     </div>
