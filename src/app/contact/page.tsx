@@ -51,7 +51,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
@@ -78,7 +79,7 @@ export default function ContactPage() {
         message: result.message || 'Votre message a été envoyé avec succès !',
       });
 
-      e.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setSubmitStatus({
         type: 'error',
