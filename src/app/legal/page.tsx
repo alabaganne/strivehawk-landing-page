@@ -7,124 +7,124 @@ import Footer from '@/components/Footer';
 const sections = [
   {
     id: 'accessibilite',
-    title: "D\u00e9claration d\u2019Accessibilit\u00e9",
+    title: "Déclaration d'Accessibilité",
     content: (
       <>
         <p>
-          Chez Strivehawk, nous nous engageons \u00e0 rendre nos services accessibles \u00e0 tous.
+          Chez Strivehawk, nous nous engageons à rendre nos services accessibles à tous.
         </p>
         <p>
-          Si vous avez des questions ou rencontrez des difficult\u00e9s d\u2019accessibilit\u00e9 lors de l\u2019utilisation de notre site web, veuillez nous contacter \u00e0 l\u2019adresse suivante&nbsp;: <a href="mailto:contact@strivehawk.com" className="text-primary hover:underline">contact@strivehawk.com</a>.
+          Si vous avez des questions ou rencontrez des difficultés d'accessibilité lors de l'utilisation de notre site web, veuillez nous contacter à l'adresse suivante&nbsp;: <a href="mailto:contact@strivehawk.com" className="text-primary hover:underline">contact@strivehawk.com</a>.
         </p>
       </>
     ),
   },
   {
     id: 'confidentialite',
-    title: "D\u00e9claration de Confidentialit\u00e9",
+    title: "Déclaration de Confidentialité",
     content: (
       <>
-        <p className="text-sm text-muted mb-4">Date d&apos;entr\u00e9e en vigueur&nbsp;: 7 D\u00e9cembre 2024</p>
+        <p className="text-sm text-muted mb-4">Date d&apos;entrée en vigueur&nbsp;: 7 Décembre 2024</p>
         <p>
-          La protection de votre vie priv\u00e9e est une priorit\u00e9 pour nous.
-          Cette politique explique de mani\u00e8re transparente comment nous collectons, utilisons et prot\u00e9geons vos informations personnelles.
+          La protection de votre vie privée est une priorité pour nous.
+          Cette politique explique de manière transparente comment nous collectons, utilisons et protégeons vos informations personnelles.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Informations que nous collectons</h3>
-        <p><strong>Informations personnelles&nbsp;:</strong> Nom, adresse email, num\u00e9ro de t\u00e9l\u00e9phone, informations de paiement (le cas \u00e9ch\u00e9ant).</p>
-        <p><strong>Donn\u00e9es techniques&nbsp;:</strong> Adresse IP, type de navigateur, informations li\u00e9es aux cookies et \u00e0 la navigation sur notre site.</p>
+        <p><strong>Informations personnelles&nbsp;:</strong> Nom, adresse email, numéro de téléphone, informations de paiement (le cas échéant).</p>
+        <p><strong>Données techniques&nbsp;:</strong> Adresse IP, type de navigateur, informations liées aux cookies et à la navigation sur notre site.</p>
 
-        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Utilisation de vos donn\u00e9es</h3>
+        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Utilisation de vos données</h3>
         <p>Nous utilisons vos informations afin de&nbsp;:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>Fournir, g\u00e9rer et am\u00e9liorer continuellement nos services</li>
-          <li>Communiquer avec vous concernant des mises \u00e0 jour, offres ou informations pertinentes (avec votre consentement)</li>
+          <li>Fournir, gérer et améliorer continuellement nos services</li>
+          <li>Communiquer avec vous concernant des mises à jour, offres ou informations pertinentes (avec votre consentement)</li>
         </ul>
 
-        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">S\u00e9curit\u00e9 des donn\u00e9es</h3>
+        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Sécurité des données</h3>
         <p>
-          Nous mettons en place des mesures de s\u00e9curit\u00e9 renforc\u00e9es, incluant le chiffrement et des serveurs s\u00e9curis\u00e9s, afin de prot\u00e9ger vos informations contre tout acc\u00e8s non autoris\u00e9.
+          Nous mettons en place des mesures de sécurité renforcées, incluant le chiffrement et des serveurs sécurisés, afin de protéger vos informations contre tout accès non autorisé.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Vos droits</h3>
         <p>Vous disposez du droit&nbsp;:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>d&apos;acc\u00e9der \u00e0 vos donn\u00e9es personnelles,</li>
+          <li>d&apos;accéder à vos données personnelles,</li>
           <li>de les modifier,</li>
           <li>ou de demander leur suppression.</li>
         </ul>
         <p className="mt-2">
-          Pour exercer ces droits, contactez-nous \u00e0 <a href="mailto:contact@strivehawk.com" className="text-primary hover:underline">contact@strivehawk.com</a>.
+          Pour exercer ces droits, contactez-nous à <a href="mailto:contact@strivehawk.com" className="text-primary hover:underline">contact@strivehawk.com</a>.
         </p>
       </>
     ),
   },
   {
     id: 'cgv',
-    title: "Conditions G\u00e9n\u00e9rales de Vente",
+    title: "Conditions Générales de Vente",
     content: (
       <>
-        <p className="text-sm text-muted mb-4">Date d&apos;entr\u00e9e en vigueur&nbsp;: 7 d\u00e9cembre 2024</p>
+        <p className="text-sm text-muted mb-4">Date d&apos;entrée en vigueur&nbsp;: 7 décembre 2024</p>
         <p>
-          En achetant un produit ou un service aupr\u00e8s de Strivehawk, vous acceptez les conditions suivantes&nbsp;:
+          En achetant un produit ou un service auprès de Strivehawk, vous acceptez les conditions suivantes&nbsp;:
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">1. Conditions de paiement</h3>
         <p>
-          Tous les paiements sont exigibles \u00e0 r\u00e9ception de la facture, sauf accord \u00e9crit contraire.
-          Des frais de retard de 30&nbsp;% peuvent \u00eatre appliqu\u00e9s aux soldes impay\u00e9s apr\u00e8s la p\u00e9riode de gr\u00e2ce convenue.
+          Tous les paiements sont exigibles à réception de la facture, sauf accord écrit contraire.
+          Des frais de retard de 30&nbsp;% peuvent être appliqués aux soldes impayés après la période de grâce convenue.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">2. Politique de remboursement</h3>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>Les remboursements sont accord\u00e9s uniquement pour les services non fournis ou les produits d\u00e9fectueux.</li>
-          <li>Les services par abonnement ne sont pas remboursables une fois activ\u00e9s.</li>
+          <li>Les remboursements sont accordés uniquement pour les services non fournis ou les produits défectueux.</li>
+          <li>Les services par abonnement ne sont pas remboursables une fois activés.</li>
         </ul>
 
-        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">3. Limitation de responsabilit\u00e9</h3>
+        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">3. Limitation de responsabilité</h3>
         <p>
-          Strivehawk ne pourra \u00eatre tenue responsable des dommages indirects, accessoires ou cons\u00e9cutifs r\u00e9sultant de l&apos;utilisation de ses services.
+          Strivehawk ne pourra être tenue responsable des dommages indirects, accessoires ou consécutifs résultant de l&apos;utilisation de ses services.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">4. Garanties produits et services</h3>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>Les garanties mat\u00e9rielles sont assur\u00e9es par les fabricants concern\u00e9s.</li>
-          <li>Pour les services, Strivehawk s&apos;engage \u00e0 respecter les livrables d\u00e9finis et valid\u00e9s contractuellement.</li>
+          <li>Les garanties matérielles sont assurées par les fabricants concernés.</li>
+          <li>Pour les services, Strivehawk s&apos;engage à respecter les livrables définis et validés contractuellement.</li>
         </ul>
       </>
     ),
   },
   {
     id: 'conditions-utilisation',
-    title: "Conditions d\u2019Utilisation",
+    title: "Conditions d'Utilisation",
     content: (
       <>
-        <p className="text-sm text-muted mb-4">Date d&apos;entr\u00e9e en vigueur&nbsp;: 7 d\u00e9cembre 2024</p>
+        <p className="text-sm text-muted mb-4">Date d&apos;entrée en vigueur&nbsp;: 7 décembre 2024</p>
         <p>
-          En acc\u00e9dant au site web de Strivehawk, vous acceptez les conditions suivantes&nbsp;:
+          En accédant au site web de Strivehawk, vous acceptez les conditions suivantes&nbsp;:
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">1. Licence d&apos;utilisation du site</h3>
         <p>
-          Une licence limit\u00e9e, non exclusive et non transf\u00e9rable vous est accord\u00e9e pour consulter et utiliser le contenu du site \u00e0 des fins personnelles ou professionnelles.
+          Une licence limitée, non exclusive et non transférable vous est accordée pour consulter et utiliser le contenu du site à des fins personnelles ou professionnelles.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">2. Restrictions</h3>
         <p>Il est strictement interdit de&nbsp;:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
           <li>introduire des virus ou tout code malveillant,</li>
-          <li>copier, modifier ou exploiter le contenu sans autorisation \u00e9crite,</li>
+          <li>copier, modifier ou exploiter le contenu sans autorisation écrite,</li>
           <li>tenter d&apos;analyser ou de reproduire la structure technique du site.</li>
         </ul>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">3. Exclusion de garanties</h3>
         <p>
-          Le site et les services sont fournis &quot;en l&apos;\u00e9tat&quot;, sans garantie d&apos;absence d&apos;erreurs, d&apos;interruptions ou de disponibilit\u00e9 permanente.
+          Le site et les services sont fournis &quot;en l&apos;état&quot;, sans garantie d&apos;absence d&apos;erreurs, d&apos;interruptions ou de disponibilité permanente.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">4. Droit applicable</h3>
         <p>
-          Ces conditions sont r\u00e9gies par les lois de l&apos;\u00c9tat de Washington, \u00c9tats-Unis.
+          Ces conditions sont régies par les lois de l&apos;État de Washington, États-Unis.
         </p>
       </>
     ),
@@ -134,21 +134,21 @@ const sections = [
     title: "Ne pas vendre ou partager mes informations",
     content: (
       <>
-        <p className="text-sm text-muted mb-4">Date d&apos;entr\u00e9e en vigueur&nbsp;: 7 d\u00e9cembre 2024</p>
+        <p className="text-sm text-muted mb-4">Date d&apos;entrée en vigueur&nbsp;: 7 décembre 2024</p>
         <p>
-          Strivehawk respecte votre vie priv\u00e9e et ne vend ni ne partage vos donn\u00e9es personnelles \u00e0 des fins marketing avec des tiers.
+          Strivehawk respecte votre vie privée et ne vend ni ne partage vos données personnelles à des fins marketing avec des tiers.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Exceptions</h3>
-        <p>Le partage de donn\u00e9es peut avoir lieu uniquement dans les cas suivants&nbsp;:</p>
+        <p>Le partage de données peut avoir lieu uniquement dans les cas suivants&nbsp;:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>avec des partenaires technologiques (ex.&nbsp;: Pax8, Zoho) strictement n\u00e9cessaires \u00e0 la fourniture des services achet\u00e9s,</li>
-          <li>lorsque la loi l&apos;exige (demande l\u00e9gale, autorit\u00e9s judiciaires ou forces de l&apos;ordre).</li>
+          <li>avec des partenaires technologiques (ex.&nbsp;: Pax8, Zoho) strictement nécessaires à la fourniture des services achetés,</li>
+          <li>lorsque la loi l&apos;exige (demande légale, autorités judiciaires ou forces de l&apos;ordre).</li>
         </ul>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">Opposition (Opt-out)</h3>
         <p>
-          Pour vous opposer au partage de vos donn\u00e9es, veuillez nous \u00e9crire \u00e0 <a href="mailto:contact@strivehawk.com" className="text-primary hover:underline">contact@strivehawk.com</a>.
+          Pour vous opposer au partage de vos données, veuillez nous écrire à <a href="mailto:contact@strivehawk.com" className="text-primary hover:underline">contact@strivehawk.com</a>.
         </p>
       </>
     ),
@@ -158,32 +158,32 @@ const sections = [
     title: "Gestion des Cookies",
     content: (
       <>
-        <p className="text-sm text-muted mb-4">Date d&apos;entr\u00e9e en vigueur&nbsp;: 7 d\u00e9cembre 2024</p>
+        <p className="text-sm text-muted mb-4">Date d&apos;entrée en vigueur&nbsp;: 7 décembre 2024</p>
         <p>
-          Strivehawk utilise des cookies afin d&apos;am\u00e9liorer votre exp\u00e9rience de navigation et d&apos;analyser l&apos;utilisation du site.
+          Strivehawk utilise des cookies afin d&apos;améliorer votre expérience de navigation et d&apos;analyser l&apos;utilisation du site.
         </p>
 
-        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">1. Types de cookies utilis\u00e9s</h3>
+        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">1. Types de cookies utilisés</h3>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li><strong>Cookies essentiels&nbsp;:</strong> n\u00e9cessaires au bon fonctionnement du site</li>
-          <li><strong>Cookies de performance&nbsp;:</strong> permettent d&apos;analyser le comportement des utilisateurs pour am\u00e9liorer le site</li>
-          <li><strong>Cookies marketing&nbsp;:</strong> utilis\u00e9s pour proposer des contenus ou publicit\u00e9s cibl\u00e9s</li>
+          <li><strong>Cookies essentiels&nbsp;:</strong> nécessaires au bon fonctionnement du site</li>
+          <li><strong>Cookies de performance&nbsp;:</strong> permettent d&apos;analyser le comportement des utilisateurs pour améliorer le site</li>
+          <li><strong>Cookies marketing&nbsp;:</strong> utilisés pour proposer des contenus ou publicités ciblés</li>
         </ul>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">2. Gestion des cookies</h3>
         <p>
-          Vous pouvez g\u00e9rer vos pr\u00e9f\u00e9rences de cookies ou refuser les cookies non essentiels via notre outil de gestion des cookies.
+          Vous pouvez gérer vos préférences de cookies ou refuser les cookies non essentiels via notre outil de gestion des cookies.
         </p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">3. Cookies tiers</h3>
         <p>
-          Nous utilisons des services tiers (ex.&nbsp;: Google Analytics) pour analyser et am\u00e9liorer les performances du site.
+          Nous utilisons des services tiers (ex.&nbsp;: Google Analytics) pour analyser et améliorer les performances du site.
         </p>
 
-        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">4. D\u00e9sactivation des cookies</h3>
+        <h3 className="text-xl font-semibold text-foreground mt-8 mb-3">4. Désactivation des cookies</h3>
         <p>
-          Vous pouvez d\u00e9sactiver les cookies via les param\u00e8tres de votre navigateur.
-          Veuillez noter que certaines fonctionnalit\u00e9s du site peuvent \u00eatre limit\u00e9es si les cookies sont d\u00e9sactiv\u00e9s.
+          Vous pouvez désactiver les cookies via les paramètres de votre navigateur.
+          Veuillez noter que certaines fonctionnalités du site peuvent être limitées si les cookies sont désactivés.
         </p>
       </>
     ),
@@ -197,10 +197,10 @@ export default function LegalPage() {
       <main className="min-h-screen bg-background pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Politique de <span className="gradient-text">Confidentialit\u00e9</span>
+            Politique de <span className="gradient-text">Confidentialité</span>
           </h1>
           <p className="text-lg text-muted mb-12">
-            Informations l\u00e9gales, conditions d&apos;utilisation et politique de confidentialit\u00e9 de Strivehawk.
+            Informations légales, conditions d&apos;utilisation et politique de confidentialité de Strivehawk.
           </p>
 
           {/* Table of contents */}
@@ -240,7 +240,7 @@ export default function LegalPage() {
               href="/"
               className="text-primary hover:underline text-sm"
             >
-              &larr; Retour \u00e0 l&apos;accueil
+              &larr; Retour à l'accueil
             </Link>
           </div>
         </div>
