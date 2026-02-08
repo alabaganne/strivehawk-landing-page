@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full px-6 md:px-8 min-h-screen overflow-hidden flex flex-col items-center justify-center bg-background"
+      className="relative w-full px-6 md:px-8 min-h-screen pt-24 overflow-hidden flex flex-col items-center justify-center bg-background"
     >
       {/* Grid BG */}
       <div
